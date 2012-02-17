@@ -1,5 +1,11 @@
 MyMvp::Application.routes.draw do
-  resources :recipes
+  get "log_in" => "sessions#new", :as => "log_in"
+	get "log_out" => "sessions#destroy", :as => "log_out"
+  get "sign_up" => "users#new", :as => "sign_up"
+	root :to => "users#new"
+
+  resources :users
+	resources :sessions
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -50,7 +56,6 @@ MyMvp::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => "recipes#index"
 
   # See how all your routes lay out with "rake routes"
 

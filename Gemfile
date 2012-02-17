@@ -11,6 +11,8 @@ gem "nifty-generators",  '>= 0.4.0', :group => :development
 
 gem 'activerecord-sqlserver-adapter'
 
+gem "bcrypt-ruby", :require => "bcrypt"
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
@@ -19,6 +21,14 @@ gem 'activerecord-sqlserver-adapter'
 
 # To use debugger
 # gem 'ruby-debug'
+
+# Rspec
+group :test, :development do
+  gem "rspec-rails", "~> 2.6"
+	gem 'capybara'
+
+end
+
 
 # Bundle the extra gems:
 # gem 'bj'
