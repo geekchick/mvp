@@ -5,7 +5,10 @@ gem 'rails', '3.0.0'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+gem 'omniauth-facebook'
 gem 'mysql2', '< 0.3'
+
+gem 'omniauth-identity'
 
 gem "nifty-generators",  '>= 0.4.0', :group => :development
 

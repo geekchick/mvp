@@ -1,0 +1,86 @@
+<h1>Welcome to sign up!</h1>
+<head>
+	<title>Sign Up</title>
+</head>
+
+<body>
+<!--Facebooker Login button on signup page -->
+<div id="fb-root"></div>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      //appId      : '163542930420008', // App ID
+      //channelUrl : '//WWW.YOUR_DOMAIN.COM/channel.html', // Channel File
+      //status     : true, // check login status
+      cookie     : true, // enable cookies to allow the server to access the session
+      xfbml      : true  // parse XFBML
+    });
+
+    // Additional initialization code here
+  };
+
+  // Load the SDK Asynchronously
+  (function(d){
+     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement('script'); js.id = id; js.async = true;
+     js.src = "//connect.facebook.net/en_US/all.js";
+     ref.parentNode.insertBefore(js, ref);
+   }(document));
+</script>
+
+
+			<% if current_user %>
+  Welcome <%= current_user.name %>!
+  <%= link_to "Sign Out", signout_path %>
+<% else %>
+<% end %>
+
+<!--Begin Create Registration -->
+<%= form_tag "/auth/identity/register" do %>
+  <% if @identity && @identity.errors.any? %>
+    <div class="error_messages">
+      <h2><%= pluralize(@identity.errors.count, "error") %> prohibited this account from being saved:</h2>
+      <ul>
+      <% @identity.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+	<div class="field">
+		<%= select("title", "id", {"--Select Your Role--" => "0", "Player" => "1", "Team" => "2", "Agent" => "3" }) %>
+	</div>
+	<div class="field">
+		<%= text_field_tag :first_name, "First Name" %>
+	</div>
+  <div class="field">
+    <%= text_field_tag :email,  @identity.try(:email) %>
+  </div>
+
+  <div class="actions"><%= submit_tag "Start my Profile" %></div>
+<% end %>
+<!-- End Create Registration -->
+
+<a href="/auth/facebook" class="auth_provider">
+	<div class="fb-login-button">Connect with Facebook</div>
+</a>
+
+<p>
+	<strong>Don't use these services?</strong>
+	<%= link_to "Create an account", new_identity_path %> or login below.
+</p>
+<%= form_tag "/auth/identity/callback" do %>
+  <div class="field">
+    <%= label_tag :auth_key, "Email" %><br>
+    <%= text_field_tag :auth_key %>
+  </div>
+  <div class="field">
+    <%= label_tag :password %><br>
+    <%= password_field_tag :password %>
+  </div>
+  <div class="actions"><%= submit_tag "Login" %></div>
+<% end %>
+
+</body>
