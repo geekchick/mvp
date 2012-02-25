@@ -10,12 +10,51 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120218044253) do
+ActiveRecord::Schema.define(:version => 20120225093628) do
 
   create_table "identities", :force => true do |t|
     t.string   "name"
     t.string   "email"
     t.string   "password_digest"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "people", :force => true do |t|
+    t.string   "name"
+    t.date     "birthdate"
+    t.string   "country"
+    t.string   "sport"
+    t.string   "height"
+    t.string   "weight"
+    t.string   "vid_url"
+    t.string   "profile_image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "players", :primary_key => "player_id", :force => true do |t|
+    t.string   "name"
+    t.date     "birthdate"
+    t.string   "country"
+    t.string   "sport"
+    t.string   "height"
+    t.string   "weight"
+    t.string   "vid_url"
+    t.string   "profile_image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "profiles", :force => true do |t|
+    t.string   "name"
+    t.date     "birthdate"
+    t.string   "country"
+    t.string   "sport"
+    t.string   "height"
+    t.string   "weight"
+    t.string   "vid_url"
+    t.string   "profile_image"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

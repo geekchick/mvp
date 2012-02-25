@@ -1,10 +1,15 @@
 MyMvp::Application.routes.draw do
 
+  resources :profiles
+
+  resources :players
+
+  resources :people
+
  	root :to => 'sessions#signup'
-
 	match "/auth/:provider/callback" => "sessions#create"
+	match "/auth/failure", to: "sessions#failure"
 	match "/signout" => "sessions#destroy", :as => :signout
-
 	resources :identities
 
   # The priority is based upon order of creation:

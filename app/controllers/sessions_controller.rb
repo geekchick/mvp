@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
 	#protect_from_forgery
 
-	def create
+def create
   auth = request.env["omniauth.auth"]
   user = User.find_by_provider_and_uid(auth["provider"], auth["uid"]) || User.create_with_omniauth(auth)
   session[:user_id] = user.id
@@ -13,5 +13,8 @@ def destroy
   redirect_to root_url, :notice => "Signed out!"
 end
 
+def failure
+	redirect_to "http://failurepage.com/"
+end
 
 end

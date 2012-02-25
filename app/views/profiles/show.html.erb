@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @profile.name %>
+</p>
+
+<p>
+  <b>Birthdate:</b>
+  <%= @profile.birthdate %>
+</p>
+
+<p>
+  <b>Country:</b>
+  <%= @profile.country %>
+</p>
+
+<p>
+  <b>Sport:</b>
+  <%= @profile.sport %>
+</p>
+
+<p>
+  <b>Height:</b>
+  <%= @profile.height %>
+</p>
+
+<p>
+  <b>Weight:</b>
+  <%= @profile.weight %>
+</p>
+
+<p>
+  <b>Vid url:</b>
+  <%= @profile.vid_url %>
+</p>
+
+<p>
+  <b>Profile image:</b>
+  <%= @profile.profile_image %>
+</p>
+
+
+<%= link_to 'Edit', edit_profile_path(@profile) %> |
+<%= link_to 'Back', profiles_path %>

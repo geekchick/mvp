@@ -36,41 +36,23 @@
 <% else %>
 <% end %>
 
-<!--Begin Create Registration -->
-<%= form_tag "/auth/identity/register" do %>
-  <% if @identity && @identity.errors.any? %>
-    <div class="error_messages">
-      <h2><%= pluralize(@identity.errors.count, "error") %> prohibited this account from being saved:</h2>
-      <ul>
-      <% @identity.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-	<div class="field">
-		<%= select("title", "id", {"--Select Your Role--" => "0", "Player" => "1", "Team" => "2", "Agent" => "3" }) %>
-	</div>
-	<div class="field">
-		<%= text_field_tag :first_name, "First Name" %>
-	</div>
-  <div class="field">
-    <%= text_field_tag :email,  @identity.try(:email) %>
-  </div>
 
-  <div class="actions"><%= submit_tag "Start my Profile" %></div>
-<% end %>
-<!-- End Create Registration -->
-
+<!-- Begin Facebook Login -->
 <a href="/auth/facebook" class="auth_provider">
 	<div class="fb-login-button">Connect with Facebook</div>
 </a>
+<!-- End Facebook Login -->
 
 <p>
-	<strong>Don't use these services?</strong>
-	<%= link_to "Create an account", new_identity_path %> or login below.
+  or
+  <%= link_to "sign up", new_identity_path %> 
+	with your email address.
 </p>
+
+
+
+<p>
 <%= form_tag "/auth/identity/callback" do %>
   <div class="field">
     <%= label_tag :auth_key, "Email" %><br>
@@ -82,5 +64,7 @@
   </div>
   <div class="actions"><%= submit_tag "Login" %></div>
 <% end %>
+
+
 
 </body>

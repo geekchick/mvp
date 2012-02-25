@@ -28,6 +28,7 @@ test:
   password: P@nc@keH0useB!tch
   socket: /var/run/mysqld/mysqld.sock
 
+
 production:
   adapter: mysql2
   encoding: utf8
