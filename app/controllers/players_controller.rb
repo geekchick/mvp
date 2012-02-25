@@ -2,6 +2,7 @@ class PlayersController < ApplicationController
   # GET /players
   # GET /players.xml
   def index
+		@users = User.all
     @players = Player.all
 
     respond_to do |format|

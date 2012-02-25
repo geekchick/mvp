@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(:version => 20120225093628) do
 
-  create_table "identities", :force => true do |t|
+  create_table "identities", :primary_key => "identity_id", :force => true do |t|
     t.string   "name"
     t.string   "email"
     t.string   "password_digest"
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(:version => 20120225093628) do
     t.datetime "updated_at"
   end
 
-  create_table "profiles", :force => true do |t|
+  create_table "profiles", :primary_key => "profile_id", :force => true do |t|
     t.string   "name"
     t.date     "birthdate"
     t.string   "country"
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(:version => 20120225093628) do
     t.string   "weight"
     t.string   "vid_url"
     t.string   "profile_image"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -65,7 +66,7 @@ ActiveRecord::Schema.define(:version => 20120225093628) do
     t.datetime "updated_at"
   end
 
-  create_table "users", :force => true do |t|
+  create_table "users", :primary_key => "user_id", :force => true do |t|
     t.string   "provider"
     t.string   "uid"
     t.string   "name"
