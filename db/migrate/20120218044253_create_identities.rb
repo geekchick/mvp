@@ -1,6 +1,6 @@
 class CreateIdentities < ActiveRecord::Migration
   def self.up
-    create_table :identities, {:primary_key => :identity_id} do |t|
+    create_table :identities do |t|
       t.string :name
       t.string :email
       t.string :password_digest

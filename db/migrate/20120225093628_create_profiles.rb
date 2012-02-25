@@ -1,6 +1,6 @@
 class CreateProfiles < ActiveRecord::Migration
   def self.up
-    create_table :profiles, {:primary_key => :profile_id} do |t|
+    create_table :profiles do |t|
       t.string :name
       t.date :birthdate
       t.string :country
