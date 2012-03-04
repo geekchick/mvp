@@ -1,6 +1,9 @@
 class User < ActiveRecord::Base
+	attr_accessible :role, :sport, :birthdate
 
-	belongs_to :profile
+	has_one :profile
+	has_one :basketball
+	has_many :micropost
 
 	def self.create_with_omniauth(auth)
   create! do |user|

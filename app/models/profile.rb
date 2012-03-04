@@ -1,3 +1,4 @@
 class Profile < ActiveRecord::Base
-	has_one :user
+	belongs_to :user
+	belongs_to :main_basketball
 end

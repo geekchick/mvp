@@ -1,0 +1,27 @@
+<h1>Listing basketball_profiles</h1>
+
+<table>
+  <tr>
+    <th>Ppg</th>
+    <th>Rpg</th>
+    <th>Apg</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @basketball_profiles.each do |basketball_profile| %>
+  <tr>
+    <td><%= basketball_profile.ppg %></td>
+    <td><%= basketball_profile.rpg %></td>
+    <td><%= basketball_profile.apg %></td>
+    <td><%= link_to 'Show', basketball_profile %></td>
+    <td><%= link_to 'Edit', edit_basketball_profile_path(basketball_profile) %></td>
+    <td><%= link_to 'Destroy', basketball_profile, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Basketball profile', new_basketball_profile_path %>

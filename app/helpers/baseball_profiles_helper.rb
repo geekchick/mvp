@@ -1,0 +1,2 @@
+module BaseballProfilesHelper
+end

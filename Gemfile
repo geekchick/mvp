@@ -7,8 +7,17 @@ gem 'rails', '3.0.0'
 
 gem 'foreigner'
 
+
+group :production, do
+	gem 'pg', '~> 0.12.2'
+end
+
+
 gem 'omniauth-facebook'
-gem 'mysql2', '< 0.3'
+
+group :development, :test do
+	gem 'mysql2', '< 0.3'
+end
 
 gem 'omniauth-identity'
 

@@ -1,15 +1,10 @@
 class CreateProfiles < ActiveRecord::Migration
   def self.up
     create_table :profiles do |t|
-      t.string :name
       t.date :birthdate
-      t.string :country
+      t.string :title
       t.string :sport
-      t.string :height
-      t.string :weight
-      t.string :vid_url
-      t.string :profile_image
-			t.integer :user_id
+ 			t.references :user
 
       t.timestamps
     end

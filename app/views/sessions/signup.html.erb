@@ -4,6 +4,12 @@
 </head>
 
 <body>
+		<% if current_user %>
+  Welcome <%= current_user.name %>!
+  <%= link_to "Sign Out", signout_path %>
+<% else %>
+<% end %>
+
 <!--Facebooker Login button on signup page -->
 <div id="fb-root"></div>
 <script>
@@ -28,14 +34,6 @@
      ref.parentNode.insertBefore(js, ref);
    }(document));
 </script>
-
-
-			<% if current_user %>
-  Welcome <%= current_user.name %>!
-  <%= link_to "Sign Out", signout_path %>
-<% else %>
-<% end %>
-
 
 
 <!-- Begin Facebook Login -->

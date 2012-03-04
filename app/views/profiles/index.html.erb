@@ -2,29 +2,16 @@
 
 <table>
   <tr>
-    <th>Name</th>
     <th>Birthdate</th>
-    <th>Country</th>
+    <th>Title</th>
     <th>Sport</th>
-    <th>Height</th>
-    <th>Weight</th>
-    <th>Vid url</th>
-    <th>Profile image</th>
-    <th></th>
-    <th></th>
-    <th></th>
   </tr>
 
 <% @profiles.each do |profile| %>
   <tr>
-    <td><%= profile.name %></td>
     <td><%= profile.birthdate %></td>
-    <td><%= profile.country %></td>
+    <td><%= profile.title %></td>
     <td><%= profile.sport %></td>
-    <td><%= profile.height %></td>
-    <td><%= profile.weight %></td>
-    <td><%= profile.vid_url %></td>
-    <td><%= profile.profile_image %></td>
     <td><%= link_to 'Show', profile %></td>
     <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
     <td><%= link_to 'Destroy', profile, :confirm => 'Are you sure?', :method => :delete %></td>

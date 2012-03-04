@@ -1,9 +1,10 @@
 class ProfilesController < ApplicationController
   # GET /profiles
   # GET /profiles.xml
-  def index
+  def index #Loops through all the profiles and renders them
     @profiles = Profile.all
-
+  	@my_profiles = {'Visa' => 1, 'Mastercard' => 2, 'Switch' => 3}
+		
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @profiles }
@@ -12,7 +13,7 @@ class ProfilesController < ApplicationController
 
   # GET /profiles/1
   # GET /profiles/1.xml
-  def show
+  def show #Shows the profile that was created
     @profile = Profile.find(params[:id])
 
     respond_to do |format|
@@ -23,7 +24,7 @@ class ProfilesController < ApplicationController
 
   # GET /profiles/new
   # GET /profiles/new.xml
-  def new
+  def new #Create new profile
     @profile = Profile.new
 
     respond_to do |format|
@@ -41,6 +42,7 @@ class ProfilesController < ApplicationController
   # POST /profiles.xml
   def create
     @profile = Profile.new(params[:profile])
+		@profile.user_id = current_user.id #fk between user and profile
 
     respond_to do |format|
       if @profile.save

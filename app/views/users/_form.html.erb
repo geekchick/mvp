@@ -1,0 +1,19 @@
+<%= form_for User.new do |f| %>
+
+
+	<div class="field">
+    <%= f.label :birthdate %><br />
+    <%= f.date_select :birthdate %>
+  </div>
+  <div class="field">
+    <%= f.label :role %><br />
+		<%= f.select(:role, ["Player", "Team", "Agent"]) %>
+  </div>
+  <div class="field">
+    <%= f.label :sport %><br />
+    <%= f.select(:sport, ["Basketball", "Baseball", "Football"]) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

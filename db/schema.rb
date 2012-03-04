@@ -10,12 +10,46 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120225093628) do
+ActiveRecord::Schema.define(:version => 20120303191100) do
+
+  create_table "baseball_profiles", :force => true do |t|
+    t.string   "hits"
+    t.string   "runs"
+    t.string   "homeruns"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "basketball_profiles", :force => true do |t|
+    t.string   "ppg"
+    t.string   "rpg"
+    t.string   "apg"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "basketballs", :force => true do |t|
+    t.string   "ppg"
+    t.string   "rpg"
+    t.string   "apg"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "identities", :force => true do |t|
     t.string   "name"
     t.string   "email"
     t.string   "password_digest"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "microposts", :force => true do |t|
+    t.string   "content"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -47,14 +81,9 @@ ActiveRecord::Schema.define(:version => 20120225093628) do
   end
 
   create_table "profiles", :force => true do |t|
-    t.string   "name"
     t.date     "birthdate"
-    t.string   "country"
+    t.string   "title"
     t.string   "sport"
-    t.string   "height"
-    t.string   "weight"
-    t.string   "vid_url"
-    t.string   "profile_image"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -70,6 +99,9 @@ ActiveRecord::Schema.define(:version => 20120225093628) do
     t.string   "provider"
     t.string   "uid"
     t.string   "name"
+    t.date     "birthdate"
+    t.string   "role"
+    t.string   "sport"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

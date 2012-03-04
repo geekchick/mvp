@@ -1,0 +1,27 @@
+<h1>Listing baseball_profiles</h1>
+
+<table>
+  <tr>
+    <th>Hits</th>
+    <th>Runs</th>
+    <th>Homeruns</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @baseball_profiles.each do |baseball_profile| %>
+  <tr>
+    <td><%= baseball_profile.hits %></td>
+    <td><%= baseball_profile.runs %></td>
+    <td><%= baseball_profile.homeruns %></td>
+    <td><%= link_to 'Show', baseball_profile %></td>
+    <td><%= link_to 'Edit', edit_baseball_profile_path(baseball_profile) %></td>
+    <td><%= link_to 'Destroy', baseball_profile, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Baseball profile', new_baseball_profile_path %>

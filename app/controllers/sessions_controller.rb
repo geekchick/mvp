@@ -6,6 +6,7 @@ def create
   user = User.find_by_provider_and_uid(auth["provider"], auth["uid"]) || User.create_with_omniauth(auth)
   session[:user_id] = user.id
   redirect_to root_url, :notice => "Signed in!"
+  #render :partial => 'users/user_criteria'
 end
 
 def destroy
@@ -14,7 +15,9 @@ def destroy
 end
 
 def failure
-	redirect_to "http://failurepage.com/"
+	redirect_to "http://failurepage.com/" #need if login fails, change to user friendly message
 end
+
+
 
 end

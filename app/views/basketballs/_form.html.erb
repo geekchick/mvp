@@ -1,0 +1,19 @@
+<%= form_for Basketball.new do |f| %>
+ 
+
+  <div class="field">
+    <%= f.label :ppg %><br />
+    <%= f.text_field :ppg %>
+  </div>
+  <div class="field">
+    <%= f.label :rpg %><br />
+    <%= f.text_field :rpg %>
+  </div>
+  <div class="field">
+    <%= f.label :apg %><br />
+    <%= f.text_field :apg %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

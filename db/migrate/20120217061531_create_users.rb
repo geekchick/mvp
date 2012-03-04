@@ -4,6 +4,9 @@ class CreateUsers < ActiveRecord::Migration
       t.string :provider
       t.string :uid
       t.string :name
+			t.date   :birthdate
+			t.string :role
+			t.string :sport
 
       t.timestamps
     end

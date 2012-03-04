@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Hits:</b>
+  <%= @baseball_profile.hits %>
+</p>
+
+<p>
+  <b>Runs:</b>
+  <%= @baseball_profile.runs %>
+</p>
+
+<p>
+  <b>Homeruns:</b>
+  <%= @baseball_profile.homeruns %>
+</p>
+
+
+<%= link_to 'Edit', edit_baseball_profile_path(@baseball_profile) %> |
+<%= link_to 'Back', baseball_profiles_path %>

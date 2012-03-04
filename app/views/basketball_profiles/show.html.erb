@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Ppg:</b>
+  <%= @basketball_profile.ppg %>
+</p>
+
+<p>
+  <b>Rpg:</b>
+  <%= @basketball_profile.rpg %>
+</p>
+
+<p>
+  <b>Apg:</b>
+  <%= @basketball_profile.apg %>
+</p>
+
+
+<%= link_to 'Edit', edit_basketball_profile_path(@basketball_profile) %> |
+<%= link_to 'Back', basketball_profiles_path %>

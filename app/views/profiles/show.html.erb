@@ -1,43 +1,21 @@
+<% if @profile.sport == 'Baseball' && @profile.title == 'Player' %>
+<%= render :partial => 'baseball' %>
+<% end %>
+
 <p id="notice"><%= notice %></p>
-
-<p>
-  <b>Name:</b>
-  <%= @profile.name %>
-</p>
-
-<p>
+<p> 
   <b>Birthdate:</b>
   <%= @profile.birthdate %>
 </p>
 
 <p>
-  <b>Country:</b>
-  <%= @profile.country %>
+  <b>Name:</b>
+  <%= @profile.title %>
 </p>
 
 <p>
   <b>Sport:</b>
   <%= @profile.sport %>
-</p>
-
-<p>
-  <b>Height:</b>
-  <%= @profile.height %>
-</p>
-
-<p>
-  <b>Weight:</b>
-  <%= @profile.weight %>
-</p>
-
-<p>
-  <b>Vid url:</b>
-  <%= @profile.vid_url %>
-</p>
-
-<p>
-  <b>Profile image:</b>
-  <%= @profile.profile_image %>
 </p>
 
 

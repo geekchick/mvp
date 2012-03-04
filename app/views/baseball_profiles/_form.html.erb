@@ -1,0 +1,19 @@
+<%= form_for BaseballProfile.new do |f| %>
+  
+
+  <div class="field">
+    <%= f.label :hits %><br />
+    <%= f.text_field :hits %>
+  </div>
+  <div class="field">
+    <%= f.label :runs %><br />
+    <%= f.text_field :runs %>
+  </div>
+  <div class="field">
+    <%= f.label :homeruns %><br />
+    <%= f.text_field :homeruns %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
