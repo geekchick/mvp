@@ -1,6 +1,9 @@
+
+<!DOCTYPE html>
 <h1>Welcome to sign up!</h1>
 <head>
 	<title>Sign Up</title>
+
 </head>
 
 <body>
@@ -48,8 +51,6 @@
 	with your email address.
 </p>
 
-
-
 <p>
 <%= form_tag "/auth/identity/callback" do %>
   <div class="field">
@@ -62,7 +63,8 @@
   </div>
   <div class="actions"><%= submit_tag "Login" %></div>
 <% end %>
-
-
+</p>
 
 </body>
+
+
