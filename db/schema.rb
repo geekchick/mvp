@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120303191100) do
+ActiveRecord::Schema.define(:version => 20120305162054) do
 
   create_table "baseball_profiles", :force => true do |t|
     t.string   "hits"
@@ -99,9 +99,13 @@ ActiveRecord::Schema.define(:version => 20120303191100) do
     t.string   "provider"
     t.string   "uid"
     t.string   "name"
+    t.string   "email"
     t.date     "birthdate"
     t.string   "role"
     t.string   "sport"
+    t.string   "ppg"
+    t.string   "rpg"
+    t.string   "apg"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -5,21 +5,23 @@ class UsersController < ApplicationController
 	end
 
 	def new
-	@user = User.new
+		@user = User.new
 
-    respond_to do |format|
+   respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @user }
-    end
+   end
 	
 	end
 
 	def create
-    @user = User.new(params[:user])
+		#@user = User.new(params[:user])
+		@user = User.find(current_user.id)
+		@user.update_attributes(params[:user])
 
-    respond_to do |format|
+ 		respond_to do |format|
    
-if @user.save
+		if @user.save
        format.html { redirect_to(@user, :notice => 'User was successfully created.') }
         format.xml  { render :xml => @user, :status => :created, :location => @user }
       else
@@ -27,15 +29,15 @@ if @user.save
         format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
       end
     end
-  end
+	end
 
   def edit
-		 @user = User.find(params[:id])
+		 @user = User.find(current_user.id)
   end
 
 	def show
 		@user = User.find(params[:id])
-		
+	 
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @user }

@@ -1,5 +1,8 @@
 class User < ActiveRecord::Base
-	attr_accessible :role, :sport, :birthdate
+ include Gravtastic
+  gravtastic :email
+
+	attr_accessible :role, :sport, :birthdate, :ppg, :rpg, :apg
 
 	has_one :profile
 	has_one :basketball
@@ -10,8 +13,7 @@ class User < ActiveRecord::Base
     user.provider = auth["provider"]
     user.uid = auth["uid"]
     user.name = auth["info"]["name"]
+		user.email = auth["info"]["email"]
   end
 end
-
-
 end

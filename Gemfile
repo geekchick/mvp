@@ -21,6 +21,10 @@ end
 
 gem 'omniauth-identity'
 
+gem "gravatar", "~> 1.0"
+gem 'gravatar_image_tag'
+
+gem 'gravtastic'
 
 gem "nifty-generators",  '>= 0.4.0', :group => :development
 
