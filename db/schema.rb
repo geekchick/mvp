@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120309155137) do
+ActiveRecord::Schema.define(:version => 20120311215933) do
 
   create_table "baseball_profiles", :force => true do |t|
     t.string   "hits"
