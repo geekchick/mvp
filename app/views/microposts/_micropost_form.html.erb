@@ -1,7 +1,3 @@
-<h1>Microposts#index</h1>
-<p>Find me in app/views/microposts/index.html.erb</p>
-
-<h2>Show Microposts!</h2>
 <%= form_for Micropost.new do |f| %>
   <%= render 'error_messages', object: f.object %>
   <div class="field">
@@ -12,12 +8,3 @@
   </div>
 <% end %>
 
-
-<table>
-	<tr>
-		<td><%= render @microposts %></td>
-		<td></td>
-	</tr>
-</table>
-
-<%= will_paginate @microposts %>

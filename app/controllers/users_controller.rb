@@ -1,7 +1,10 @@
 class UsersController < ApplicationController
 
 	def index
-		@users = User.all		
+		@user = User.find(params[:id])
+		@microposts = @user.microposts.paginate(page: params[:page])
+    #@title = @user.name
+	
 	end
 
 	def new
@@ -15,8 +18,11 @@ class UsersController < ApplicationController
 	end
 
 	def create
-		#@user = User.new(params[:user])
-		@user = User.find(current_user.id)
+		@user = User.find(params[:id])
+
+		#@microposts = Micropost.find(params[:micropost_id])
+		@microposts = @user.microposts.paginate(page: params[:page])
+
 		@user.update_attributes(params[:user])
 
  		respond_to do |format|
@@ -37,7 +43,8 @@ class UsersController < ApplicationController
 
 	def show
 		@user = User.find(params[:id])
-	 
+		#@microposts = @user.microposts.paginate(page: params[:page])	 
+
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @user }

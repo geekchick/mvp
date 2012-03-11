@@ -1,10 +1,23 @@
 MyMvp::Application.routes.draw do
 
-  resources :microposts
+  get "comments/create"
+  get "microposts/index"
+  get "microposts/new"
+  get "microposts/edit"
+	get "microposts/show"
+
+  #resources :microposts, only: [:create, :destroy]
+  resources :sessions,   only: [:new, :create, :destroy]
   resources :basketballs
   resources :baseballs
   resources :users
 	resources :identities
+	#resources :comments
+
+	resources :microposts 
+ 	resources :comments
+
+
 
   get "basketballs/new"
 
@@ -15,13 +28,15 @@ MyMvp::Application.routes.draw do
   get "basketballs/edit"
 
 	
-
- 	root :to => 'sessions#signup'
+	match 'hello' => 'sessions#signup'
+ 	#root :to => 'sessions#signup'
+	root :to => 'microposts#index'
 	match "/auth/:provider/callback" => "sessions#create"
 	match "/auth/failure", to: "sessions#failure"
 	match "/signout" => "sessions#destroy", :as => :signout
 	match 'user_criteria/:id' => 'users#user_criteria'
 	match 'basketballs/:id/show' => 'basketballs#show'
+	#match 'hello' => 'microposts#index'
   #match ':user(/:user_criteria(/:id))(.:format)',  :as => 'test'
 
 	#match "/user" => "users#presign"
