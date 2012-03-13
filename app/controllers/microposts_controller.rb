@@ -1,29 +1,36 @@
 class MicropostsController < ApplicationController
-	#before_filter :signed_in_user, only: [:create, :destroy]
+	# TO DO-- before_filter :signed_in_user, only: [:create, :destroy]
 
-	def index
+
+  def index
 		@microposts = Micropost.all
-		@microposts = Micropost.paginate(page: params[:page])
- 		respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @microposts }
-    end
-	end
+  end
 
-  def create
-	 @user = User.find(current_user.id)
-   @micropost = @user.microposts.build(params[:micropost])
+  def show
+		@microposts = Micropost.all
+		#@micropost = Micropost.find(params[:id])
+		
+    respond_to do |format|
+      format.html # show.html.erb
+      format.xml  { render :xml => @micropost }
+    end
+  end
+
+  def new
+		@micropost = Micropost.new
+  end
+
+	def create
+	 	 @micropost = Micropost.new(params[:micropost])
+		 @micropost.user_id = current_user.id
+
     if @micropost.save
       flash[:success] = "Micropost created!"
       redirect_to root_path
     else
-      render 'static_pages/home'
+      #render 'static_pages/home'
     end
 
-  end
-
-  def destroy
-  end
-
+	end
 
 end

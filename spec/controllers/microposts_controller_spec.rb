@@ -9,16 +9,16 @@ describe MicropostsController do
     end
   end
 
-  describe "GET 'new'" do
+  describe "GET 'show'" do
     it "returns http success" do
-      get 'new'
+      get 'show'
       response.should be_success
     end
   end
 
-  describe "GET 'edit'" do
+  describe "GET 'new'" do
     it "returns http success" do
-      get 'edit'
+      get 'new'
       response.should be_success
     end
   end

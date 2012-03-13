@@ -1,0 +1,14 @@
+<h2>Show Microposts!</h2>
+	<%= form_for Micropost.new do |f| %>
+  <%= render 'error_messages', object: f.object %>
+  <div class="field">
+    <%= f.text_area :content %>
+  </div>
+  <%= f.fields_for :comments do |builder| %>
+				<%= render "comment_fields", :f => builder %>
+	<% end %>
+  <div class="actions">
+    <%= f.submit "Submit" %>
+  </div>
+
+<% end %>

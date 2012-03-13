@@ -1,2 +1,8 @@
 
+<%= render 'form' %>
+
+<% @microposts.each do |micropost| %>
+	<b><%= micropost.user.name %></b>
+	<%= micropost.content %><br />
+<% end %>
 
