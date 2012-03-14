@@ -6,8 +6,9 @@ class User < ActiveRecord::Base
 	#has_secure_password
 
 	has_one :basketball
-	has_many :microposts, dependent: :destroy
-	has_many :comments, dependent: :destroy
+	has_many :microposts, :dependent => :destroy
+	has_many :comments, :dependent => :destroy
+	accepts_nested_attributes_for :microposts
 
 	def self.create_with_omniauth(auth)
   create! do |user|

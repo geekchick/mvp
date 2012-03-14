@@ -4,5 +4,7 @@
 <% @microposts.each do |micropost| %>
 	<b><%= micropost.user.name %></b>
 	<%= micropost.content %><br />
+	<%= render 'comment_fields' %>
 <% end %>
+
 

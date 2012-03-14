@@ -45,6 +45,8 @@ GEM
       xpath (~> 0.1.4)
     childprocess (0.3.1)
       ffi (~> 1.0.6)
+    commenter (2.1.0)
+      rails (>= 3.0.0, < 4.0.0)
     diff-lcs (1.1.3)
     erubis (2.6.6)
       abstract (>= 1.0.0)
@@ -62,6 +64,10 @@ GEM
     gravtastic (3.2.6)
     hashie (1.2.0)
     i18n (0.4.2)
+    kaminari (0.13.0)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      railties (>= 3.0.0)
     mail (2.2.19)
       activesupport (>= 2.3.6)
       i18n (>= 0.4.0)
@@ -134,7 +140,6 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.32)
-    will_paginate (3.0.2)
     xpath (0.1.4)
       nokogiri (~> 1.3)
 
@@ -145,11 +150,13 @@ DEPENDENCIES
   activerecord-sqlserver-adapter
   bcrypt-ruby
   capybara
+  commenter
   faker
   foreigner
   gravatar (~> 1.0)
   gravatar_image_tag
   gravtastic
+  kaminari
   mocha
   mysql2 (< 0.3)
   nifty-generators (>= 0.4.0)
@@ -159,4 +166,3 @@ DEPENDENCIES
   rails (= 3.0.0)
   rake (= 0.8.7)
   rspec-rails (~> 2.6)
-  will_paginate

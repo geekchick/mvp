@@ -1,2 +1,14 @@
 <h1>Microposts#index</h1>
 <p>Find me in app/views/microposts/index.html.erb</p>
+
+<%= render 'form' %>
+
+<% @microposts.each do |micropost| %>
+	<b><%= micropost.user.name %></b>
+	<%= micropost.content %><br />
+	<%= render 'comment_fields' %></br>
+<% end %>
+
+
+
+

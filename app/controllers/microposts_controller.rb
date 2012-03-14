@@ -4,12 +4,18 @@ class MicropostsController < ApplicationController
 
   def index
 		@microposts = Micropost.all
+		#@microposts = Micropost.paginate(page: params[:page])
+
+ 		respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @microposts }
+    end
   end
 
   def show
-		@microposts = Micropost.all
-		#@micropost = Micropost.find(params[:id])
-		
+		@microposts = Micropost.where(:user_id => current_user.id).page(params[:page])
+		@micropost = Micropost.find(current_user.id)
+
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @micropost }

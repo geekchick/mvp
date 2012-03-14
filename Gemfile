@@ -8,10 +8,12 @@ gem 'rails', '3.0.0'
 gem 'foreigner'
 gem 'rake', '0.8.7'
 
-gem 'will_paginate'
+
 gem 'faker'
 
-# gem 'opinio'
+gem 'commenter'
+
+
 
 group :production, do
 	gem 'pg', '~> 0.12.2'
@@ -67,3 +69,4 @@ end
 #   gem 'webrat'
 # end
 gem "mocha", :group => :test
+gem "kaminari"

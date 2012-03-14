@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
 	def index
 		@user = User.find(params[:id])
-		@microposts = @user.microposts.paginate(page: params[:page])
+		#@microposts = @user.microposts.paginate(page: params[:page])
     #@title = @user.name
 	
 	end
@@ -43,7 +43,7 @@ class UsersController < ApplicationController
 
 	def show
 		@user = User.find(params[:id])
-    @microposts = @user.microposts.paginate(page: params[:page])
+    #@microposts = @user.microposts.paginate(page: params[:page])
 	 
 
     respond_to do |format|
