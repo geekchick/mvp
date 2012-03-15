@@ -1,10 +1,9 @@
 <%= form_for Micropost.new do |f| %>
 
   <div class="field">
-    <%= f.label :content %>
-    <%= f.text_field :content %>
-  </div>
+    <%= f.text_area :content, placeholder: "Compose new micropost...", :cols => 25, :rows => 5 %>
+	</div>
  <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Post" %>
  </div>
 <% end %>

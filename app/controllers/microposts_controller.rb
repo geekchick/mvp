@@ -1,7 +1,6 @@
 class MicropostsController < ApplicationController
 	# TO DO-- before_filter :signed_in_user, only: [:create, :destroy]
 
-
   def index
 		@microposts = Micropost.all
 		#@microposts = Micropost.paginate(page: params[:page])

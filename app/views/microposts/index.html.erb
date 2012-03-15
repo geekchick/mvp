@@ -1,14 +1,48 @@
-<h1>Microposts#index</h1>
-<p>Find me in app/views/microposts/index.html.erb</p>
+<!doctype html>
+	<html lang="en">
+		<head>
+			<meta charset="utf-8"/>
+			<title>Micropost</title>
+		  <%= stylesheet_link_tag "main_layout" %>
+		</head>
+<body>
+		<!-- Begin Intro -->
+			<div id="company_intro">
+				<div class="content">
+					<h5>Be the first to sign up!</h5>
+				</div>
+			</div>
+		  <!-- End Intro -->
+	
+		<!-- Begin Render Micropost Form -->
+			<div id="form"><%= render 'form' %></div>
+		<!-- End Render Micropost Form -->
 
-<%= render 'form' %>
+			<div id="section_main" class="section_main">
+						<div id="main_body">
+							<div id="header">
+								<h1 class="message">Start Posting!</h1>
+							</div>
+						</div>
 
-<% @microposts.each do |micropost| %>
-	<b><%= micropost.user.name %></b>
-	<%= micropost.content %><br />
-	<%= render 'comment_fields' %></br>
-<% end %>
+			
+										<% @microposts.each do |micropost| %>
+											<!--<b><%= micropost.user.name %></b>-->
+							
+								<span class="content">
+											<%= micropost.content %><br />
+								</span>
+								<h4>
+										Posted <%= time_ago_in_words(micropost.created_at) %> ago.
+							  </h4>
+								<hr />
+											<!--<%= render 'comment_fields' %></br>-->
+										<% end %>
+								
 
+			</div>
+</body>
 
+	</html>
 
 

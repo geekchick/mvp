@@ -1,0 +1,103 @@
+body {
+    background: #FFFFFF;
+    font-family: verdana,sans-serif;
+}
+
+div#top {
+    height: 85px;
+    position: relative;
+    width: 980px;
+    z-index: 1111;
+}
+
+div#top img#beebo_logo {
+    left: 20px;
+    position: absolute;
+    top: -110px;
+    z-index: 999999;
+}
+
+#company_intro {
+	background-color: #405A6A;
+	height: 60px;
+ 	left: 0;
+  position: absolute;
+  top: 0;
+	width: 1300px;
+
+
+}
+#company_intro h5 {
+    color: #DDDDDD;
+    display: inline;
+    font-size: 24px;
+    font-weight: normal;
+    line-height: 35px;
+}
+
+.content {
+  display: block;
+}
+
+div#form {
+	position: absolute;
+	top: 250px;
+	right: 100px;
+}
+
+
+.section_main {
+    
+    background: none repeat scroll 0 0 #FFFFFF;
+    font-size: 11px;
+    position: relative;
+		right: -100px;
+	  top: 100px;
+    width: 780px;
+		height: 400px;
+}
+
+.section_main h4 {
+
+
+}
+
+.
+.
+.
+
+/* microposts */
+
+
+.microposts {
+  list-style: none;
+	position: absolute;
+  margin: 110px 100 50 75;
+
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+  }
+}
+.section_main .content {
+  display: block;
+	font-size: 14px;
+}
+.section_main h4 {
+  color: 	#C0C0C0;
+}
+.section_main hr {
+
+}
+
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+aside {
+  textarea {
+    height: 100px;
+    margin-bottom: 5px;
+  }
+}
+
