@@ -30,13 +30,20 @@ MyMvp::Application.routes.draw do
 		
 	#match 'hello' => 'sessions#signup'
  	root :to => 'sessions#signup'
-	#root :to => 'microposts#index'
+	match 'microposts/' => 'microposts#index'
 	get 'index' => "microposts#index"
 	match "/auth/:provider/callback" => "sessions#create"
 	match "/auth/failure", to: "sessions#failure"
 	match "/signout" => "sessions#destroy", :as => :signout
-	match 'user_criteria/:id' => 'users#user_criteria'
-	match 'basketballs/:id/show' => 'basketballs#show'
+	match 'user_criteria/' => 'users#user_criteria'
+	match 'basketball_personal/' => 'users#basketball_personal'	
+	match 'basketball_stats/' => 'users#basketball_stats'	
+	match 'basketball_video/' => 'users#basketball_video'	
+
+	match 'baseball_personal/' => 'users#baseball_personal'	
+	match 'baseball_stats/' => 'users#baseball_stats'	
+	match 'baseball_video/' => 'users#baseball_video'
+
 	#match 'microposts/:id/show' => 'microposts#show'
 
 	#match 'hello' => 'microposts#index'

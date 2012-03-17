@@ -5,6 +5,8 @@ class MicropostsController < ApplicationController
 		@microposts = Micropost.all
 		#@microposts = Micropost.paginate(page: params[:page])
 
+		
+
  		respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @microposts }
@@ -31,7 +33,7 @@ class MicropostsController < ApplicationController
 
     if @micropost.save
       flash[:success] = "Micropost created!"
-      redirect_to root_path
+      redirect_to microposts_path
     else
       #render 'static_pages/home'
     end

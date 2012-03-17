@@ -1,0 +1,6 @@
+<!-- Profile Picture -->
+	<% if @micropost.user.provider == 'facebook' %> 
+			<%= image_tag "http://graph.facebook.com/#{@user.uid}/picture" %>		
+	<% else %>
+			<%= image_tag @user.gravatar_url %>
+  <% end %>

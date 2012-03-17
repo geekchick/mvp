@@ -4,15 +4,19 @@
 			<meta charset="utf-8"/>
 			<title>Micropost</title>
 		  <%= stylesheet_link_tag "main_layout" %>
+
 		</head>
 <body>
 		<!-- Begin Intro -->
 			<div id="company_intro">
-				<div class="content">
+				<div id="content">
 					<h5>Be the first to sign up!</h5>
 				</div>
 			</div>
 		  <!-- End Intro -->
+
+		
+			<div id="profile"><%= button_to "Create Profile", :controller => 'users', :action => 'user_criteria' %></div>
 	
 		<!-- Begin Render Micropost Form -->
 			<div id="form"><%= render 'form' %></div>
@@ -24,11 +28,14 @@
 								<h1 class="message">Start Posting!</h1>
 							</div>
 						</div>
-
-			
 										<% @microposts.each do |micropost| %>
-											<!--<b><%= micropost.user.name %></b>-->
-							
+										
+											    <% if micropost.user.provider == 'facebook' %>
+								<span class="profile_pic"><%= image_tag "http://graph.facebook.com/#{micropost.user.uid}/picture" %></span>		
+													<% else %>
+			<span class="profile_pic"><%= image_tag micropost.user.gravatar_url %></span>
+														<% end %>
+						<span class="name"><%= micropost.user.name %></span>
 								<span class="content">
 											<%= micropost.content %><br />
 								</span>

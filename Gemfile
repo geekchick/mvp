@@ -33,7 +33,7 @@ gem 'gravatar_image_tag'
 
 gem 'gravtastic'
 
-gem "nifty-generators",  '>= 0.4.0', :group => :development
+# gem "nifty-generators",  '>= 0.4.0', :group => :development
 
 gem 'activerecord-sqlserver-adapter'
 

@@ -1,0 +1,39 @@
+
+<p id="notice"><%= notice %></p>
+
+<% title "Users" %>
+<table class="profile">
+  <tr>
+    <td class="main">
+      <h1>	  
+        <%= @user.name %>
+      </h1>
+
+<!-- Profile Picture -->
+	<% if @user.provider == 'facebook' %> 
+			<%= image_tag "http://graph.facebook.com/#{@user.uid}/picture" %>		
+	<% else %>
+			<%= image_tag @user.gravatar_url %>
+  <% end %>
+
+
+    </td>
+
+	<% if @user.role == 'Player' && @user.sport == 'Basketball' %> 
+		<%= render 'show' %>
+  <% end %>
+   
+  </tr>
+
+</table>
+
+
+	<% if @user.role == 'Player' && @user.sport == 'Basketball' %> 
+		<%= render 'basketball' %>
+  <% end %>
+
+	<% if @user.role == 'Player' && @user.sport == 'Baseball' %> 
+		<%= render 'baseball' %>
+  <% end %>
+
+	

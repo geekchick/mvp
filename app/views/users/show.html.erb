@@ -1,10 +1,29 @@
+<!doctype html>
+	<html lang="en">
+		<head>
+			<meta charset="utf-8"/>
+			<title>Micropost</title>
+		  <%= stylesheet_link_tag "main_layout" %>
 
-<p id="notice"><%= notice %></p>
+		</head>
+<body>
+		<!-- Begin Intro -->
+			<div id="company_intro">
+				<div id="content">
+					<h5>Your Profile!</h5>
+				</div>
+			</div>
+		  <!-- End Intro -->
 
-<% title "Users" %>
-<table class="profile">
-  <tr>
-    <td class="main">
+
+			<div id="section_profile" class="section_profile">
+						<div id="main_body">
+							<div id="header">
+								<h1 class="message"></h1>
+							</div>
+			</div>
+									
+								    <td class="main">
       <h1>	  
         <%= @user.name %>
       </h1>
@@ -22,5 +41,27 @@
   </tr>
 
 </table>
+			
+<div>
+	<% if @user.sport == 'Basketball' && @user.role == 'Player' %>
+		<%= link_to "Edit My Profile", basketball_personal_path %>
+	<% end %>
+	
+<% if @user.sport == 'Baseball' && @user.role == 'Player' %>
+		<%= link_to "Edit My Profile", baseball_personal_path %>
+<% end %>
+
+</div>
+		<% if	@user.microposts.any? %>
+			  <h3>Microposts (<%= @user.microposts.count %>)</h3>
+				<ol class="microposts">
+        <%= render @microposts %>
+      </ol>
+
+		<% end %>
+	
+</body>
+
+	</html>
 
 

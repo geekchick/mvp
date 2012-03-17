@@ -1,20 +1,4 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <b>Ppg:</b>
-  <%= @basketball.ppg %>
-</p>
-
-<p>
-  <b>Rpg:</b>
-  <%= @basketball.rpg %>
-</p>
-
-<p>
-  <b>Apg:</b>
-  <%= @basketball.apg %>
-</p>
-
-
-<%= link_to 'Edit', edit_basketball_path(@basketball) %> |
-<%= link_to 'Back', basketballs_path %>
+	<% if @user.role == 'Player' && @user.sport == 'Basketball' %> 
+		<%= render 'show' %>
+  <% end %>

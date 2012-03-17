@@ -1,0 +1,10 @@
+<h3>Edit Your Personal Information</h3>
+<%= form_for (@user) do |f| %>
+	<%=f.label :name %>
+	<%= f.text_field :name %><br />
+	<%=f.label :birthdate %>
+	<%= f.date_select :birthdate %><br />
+	
+	<%= f.submit 'Update' %>
+
+<% end %>

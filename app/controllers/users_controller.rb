@@ -44,7 +44,7 @@ class UsersController < ApplicationController
 	def show
 		@user = User.find(params[:id])
     #@microposts = @user.microposts.paginate(page: params[:page])
-	 
+	 	@microposts = @user.microposts
 
     respond_to do |format|
       format.html # show.html.erb
@@ -69,6 +69,34 @@ class UsersController < ApplicationController
 	def user_criteria
 		@user = User.find(current_user.id)
 		@user.update_attributes(params[:user])
+	end
+
+	def basketball_personal
+		@user = User.find(current_user.id)
+	end
+
+	
+	def basketball_stats
+		@user = User.find(current_user.id)
+	end
+
+	
+	def basketball_video
+		@user = User.find(current_user.id)
+	end
+
+	def baseball_personal
+		@user = User.find(current_user.id)
+	end
+
+	
+	def baseball_stats
+		@user = User.find(current_user.id)
+	end
+
+	
+	def baseball_video
+		@user = User.find(current_user.id)
 	end
 
 end

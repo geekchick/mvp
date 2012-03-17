@@ -1,3 +1,4 @@
+
 <!doctype html>
 	<html lang="en">
 		<head>
@@ -10,24 +11,51 @@
 		<!-- Begin Intro -->
 			<div id="company_intro">
 				<div id="content">
-					<h5>Be the first to sign up!</h5>
+					<h5>Your Profile!</h5>
 				</div>
 			</div>
 		  <!-- End Intro -->
 
-			<div id="section_main" class="section_main">
+
+			<div id="section_profile" class="section_profile">
 						<div id="main_body">
 							<div id="header">
-								<h1 class="message">We need some criteria before starting!</h1>
+								<h1 class="message"></h1>
 							</div>
-						</div>
-										
-								<%= render 'criteria' %>
-
-
 			</div>
+									
+								    <td class="main">
+      <h1>	  
+        <%= @user.name %>
+      </h1>
+
+
+    </td>
+   
+  </tr>
+
+</table>
+			
+<div>
+
+<h1>Edit Your Basketball Stats</h1>
+<%= render 'basketball_links'  %>
+
+</div>
+		
+	
 </body>
 
 	</html>
+
+
+
+
+
+
+
+
+
+
 
 
