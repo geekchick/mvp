@@ -4,6 +4,12 @@
 	<%= f.text_field :name %><br />
 	<%=f.label :birthdate %>
 	<%= f.date_select :birthdate %><br />
+	<%=f.label :gender %>
+	<%= f.select(:gender, ["N/A", "Female", "Male"]) %><br />
+	<%=f.label :country %>
+	<%= f.text_field :country %><br />
+	<%=f.label :bio %>
+	<%= f.text_area :bio %><br />
 	
 	<%= f.submit 'Update' %>
 

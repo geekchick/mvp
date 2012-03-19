@@ -1,6 +1,22 @@
 class User < ActiveRecord::Base
  include Gravtastic
-	attr_accessible :role, :sport, :birthdate, :ppg, :rpg, :apg, :name, :email, :password, :password_confirmation
+	attr_accessible :role, 
+									:sport, 
+									:birthdate, 
+									:ppg, 
+									:rpg, 
+									:apg, 
+									:spg,
+									:name, 
+									:email, 
+									:password, 
+									:password_confirmation, 
+									:gender, 
+									:country, 
+									:bio,
+									:position,
+									:height,
+									:weight
 
   gravtastic :email
 	#has_secure_password

@@ -1,0 +1,35 @@
+<%= form_for (@user) do |f| %>
+
+	<div class="field">
+    <%= f.label :position %><br />
+    <%= f.select(:position, ["Point Guard", "Shooting Guard", "Swing Forward", "Power Forward", "Center"]) %>
+  </div>
+	<div class="field">
+    <%= f.label :height %><br />
+    <%= f.select(:height, ["6'0", "6'1", "6'2"]) %>
+  </div>
+  <div class="field">
+    <%= f.label :weight %><br />
+		<%= f.text_field :weight %>
+  </div>
+ <div class="field">
+    <%= f.label :ppg %><br />
+		<%= f.text_field :ppg %>
+ </div>
+ <div class="field">
+    <%= f.label :rpg %><br />
+		<%= f.text_field :rpg %>
+</div>
+<div class="field">
+    <%= f.label :apg %><br />
+		<%= f.text_field :apg %>
+</div>
+ <div class="field">
+    <%= f.label :spg %><br />
+		<%= f.text_field :spg %>
+ </div>
+<div class="field">
+		<%= f.submit "Update" %>
+</div>
+
+<% end %>
