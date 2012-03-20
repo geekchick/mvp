@@ -83,6 +83,7 @@ class UsersController < ApplicationController
 
 	
 	def basketball_video
+		@basketball_video = User.new
 		@user = User.find(current_user.id)
 	end
 

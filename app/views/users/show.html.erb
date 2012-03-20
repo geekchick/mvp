@@ -44,7 +44,8 @@
 			
 <div>
 	<% if @user.sport == 'Basketball' && @user.role == 'Player' %>
-		<%= link_to "Edit My Profile", basketball_personal_path %>
+		<%= link_to "Edit My Profile", basketball_personal_path %> |
+		<%= link_to "View My Profile", profile_path %>
 	<% end %>
 	
 <% if @user.sport == 'Baseball' && @user.role == 'Player' %>

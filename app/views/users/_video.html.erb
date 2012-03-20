@@ -2,5 +2,9 @@
 		<%= f.text_field :video_url %><%= f.submit "Update" %>
 	<% end %>
 
-	<% aha = UnvlogIt.new(@user.video_url) %>
-	<%= aha.embed_html(300, 266).html_safe  %>
+	<% if @user.video_url == "" %>
+		redirect_to root_path_url
+	<% else %>
+		<% aha = UnvlogIt.new(@user.video_url) %>
+		<%= aha.embed_html(300, 266).html_safe  %>
+	<% end %>
