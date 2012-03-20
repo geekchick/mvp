@@ -18,6 +18,8 @@ class CreateUsers < ActiveRecord::Migration
 			t.string :height
 			t.integer :weight
 			t.string :position
+			t.string :video_title
+			t.string :video_url
 
       t.timestamps
     end

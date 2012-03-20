@@ -16,7 +16,9 @@ class User < ActiveRecord::Base
 									:bio,
 									:position,
 									:height,
-									:weight
+									:weight,
+									:video_url,
+									:video_title
 
   gravtastic :email
 	#has_secure_password

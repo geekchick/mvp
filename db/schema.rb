@@ -125,6 +125,8 @@ ActiveRecord::Schema.define(:version => 20120314014147) do
     t.string   "height"
     t.integer  "weight"
     t.string   "position"
+    t.string   "video_title"
+    t.string   "video_url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

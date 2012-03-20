@@ -1,10 +1,11 @@
 class UsersController < ApplicationController
 
 	def index
+		#@users = User.all
 		@user = User.find(params[:id])
 		#@microposts = @user.microposts.paginate(page: params[:page])
     #@title = @user.name
-	
+		
 	end
 
 	def new
@@ -45,7 +46,7 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
     #@microposts = @user.microposts.paginate(page: params[:page])
 	 	@microposts = @user.microposts
-
+		
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @user }
@@ -94,8 +95,11 @@ class UsersController < ApplicationController
 		@user = User.find(current_user.id)
 	end
 
-	
 	def baseball_video
+		@user = User.find(current_user.id)
+	end
+
+	def profile
 		@user = User.find(current_user.id)
 	end
 

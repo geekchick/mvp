@@ -1,0 +1,6 @@
+	<%= form_for (@user) do |f| %>
+		<%= f.text_field :video_url %><%= f.submit "Update" %>
+	<% end %>
+
+	<% aha = UnvlogIt.new(@user.video_url) %>
+	<%= aha.embed_html(300, 266).html_safe  %>

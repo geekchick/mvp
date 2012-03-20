@@ -1,0 +1,27 @@
+<h1>Profile for: <%= @user.name %></h1>
+
+
+<!-- Profile Picture -->
+	<% if @user.provider == 'facebook' %> 
+			<%= image_tag "http://graph.facebook.com/#{@user.uid}/picture" %>		
+	<% else %>
+			<%= image_tag @user.gravatar_url %>
+  <% end %>
+
+<h3>Personal information for <%= @user.name %></h3>
+		Age: <br />
+		<%= @user.gender %><br />
+  	<%= @user.country %><br />
+		<%= @user.bio %>
+
+<h3>Stat information for <%= @user.name %></h3>
+		 	<%= @user.position %><br />
+ 	<%= @user.height %><br />
+ 	<%= @user.weight %><br />
+ 	<%= @user.ppg %><br />
+ 	<%= @user.rpg %><br />
+
+<h3>Game Video for <%= @user.name %></h3>
+		<% aha = UnvlogIt.new(@user.video_url) %>
+	<%= aha.embed_html(300, 266).html_safe  %>
+	

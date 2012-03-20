@@ -26,7 +26,6 @@ MyMvp::Application.routes.draw do
   get "basketballs/create"
 
   get "basketballs/edit"
-
 		
 	#match 'hello' => 'sessions#signup'
  	root :to => 'sessions#signup'
@@ -39,10 +38,10 @@ MyMvp::Application.routes.draw do
 	match 'basketball_personal/' => 'users#basketball_personal'	
 	match 'basketball_stats/' => 'users#basketball_stats'	
 	match 'basketball_video/' => 'users#basketball_video'	
-
 	match 'baseball_personal/' => 'users#baseball_personal'	
 	match 'baseball_stats/' => 'users#baseball_stats'	
 	match 'baseball_video/' => 'users#baseball_video'
+	match 'profile/' => 'users#profile'
 
 	#match 'microposts/:id/show' => 'microposts#show'
 
