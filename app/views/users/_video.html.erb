@@ -3,7 +3,7 @@
 	<% end %>
 
 	<% if @user.video_url == "" %>
-		redirect_to root_path_url
+		redirect_to basketball_video_path
 	<% else %>
 		<% aha = UnvlogIt.new(@user.video_url) %>
 		<%= aha.embed_html(300, 266).html_safe  %>
