@@ -22,6 +22,11 @@
  	<%= @user.rpg %><br />
 
 <h3>Game Video for <%= @user.name %></h3>
+
+	<% if @user.video_url.nil? %>
+		
+	<% else %>
 		<% aha = UnvlogIt.new(@user.video_url) %>
-	<%= aha.embed_html(300, 266).html_safe  %>
+		<%= aha.embed_html(300, 266).html_safe  %>
+	<% end %>
 	
