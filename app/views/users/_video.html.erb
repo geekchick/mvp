@@ -2,8 +2,8 @@
 		<%= f.text_field :video_url %><%= f.submit "Update" %>
 	<% end %>
 
-	<% if @user.video_url == "" %>
-		redirect_to basketball_video_path
+	<% if @user.video_url.nil? %>
+		
 	<% else %>
 		<% aha = UnvlogIt.new(@user.video_url) %>
 		<%= aha.embed_html(300, 266).html_safe  %>
