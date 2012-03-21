@@ -102,7 +102,6 @@ class UsersController < ApplicationController
 
 	def profile
 		@user = User.find(current_user.id)
-		@user.video_url = params[:video_url]
 	end
 
 end
