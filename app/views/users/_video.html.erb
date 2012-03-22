@@ -1,10 +1,10 @@
-	<%= form_for (@user) do |f| %>
-		<%= f.text_field :video_url %><%= f.submit "Update" %>
+<%= form_for (@user) do |f| %>
+	<%= f.text_field :video_url %><%= f.submit "Update" %>
 	<% end %>
 
-	<% if @user.video_url.nil? %>
-		
+	<% if @user.video_url == "" %>
+	redirect_to basketball_video_path
 	<% else %>
-		<% aha = UnvlogIt.new(@user.video_url) %>
-		<%= aha.embed_html(300, 266).html_safe  %>
-	<% end %>
+	<% aha = UnvlogIt.new(@user.video_url) %>
+	<%= aha.embed_html(300, 266).html_safe %>
+<% end %>
