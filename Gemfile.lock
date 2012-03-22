@@ -97,9 +97,14 @@ GEM
       omniauth-oauth2 (~> 1.0.0)
     omniauth-identity (1.0.0)
       omniauth (~> 1.0)
+    omniauth-oauth (1.0.0)
+      oauth
+      omniauth (~> 1.0)
     omniauth-oauth2 (1.0.0)
       oauth2 (~> 0.5.0)
       omniauth (~> 1.0)
+    omniauth-twitter (0.0.7)
+      omniauth-oauth (~> 1.0)
     pg (0.12.2)
     polyglot (0.3.3)
     rack (1.2.5)
@@ -179,6 +184,7 @@ DEPENDENCIES
   mysql2 (< 0.3)
   omniauth-facebook
   omniauth-identity
+  omniauth-twitter
   pg (~> 0.12.2)
   rails (= 3.0.0)
   rake (= 0.8.7)

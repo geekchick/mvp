@@ -31,10 +31,16 @@
 										<% @microposts.each do |micropost| %>
 										
 											    <% if micropost.user.provider == 'facebook' %>
-								<span class="profile_pic"><%= image_tag "http://graph.facebook.com/#{micropost.user.uid}/picture" %></span>		
-													<% else %>
-			<span class="profile_pic"><%= image_tag micropost.user.gravatar_url %></span>
-														<% end %>
+														<span class="profile_pic"><%= image_tag "http://graph.facebook.com/#{micropost.user.uid}/picture" %></span>		
+													<% end %>
+
+													<% if micropost.user.provider == 'twitter' %>
+														<%= image_tag	"http://api.twitter.com/1/users/profile_image/#{micropost.user.uid}.format" %>
+													<% end %>						
+
+													<% if micropost.user.provider != 'twitter' && micropost.user.provider != 'facebook' %>
+														<span class="profile_pic"><%= image_tag micropost.user.gravatar_url %></span>
+													<% end %>
 						<span class="name"><%= micropost.user.name %></span>
 								<span class="content">
 											<%= micropost.content %><br />
@@ -43,10 +49,10 @@
 										Posted <%= time_ago_in_words(micropost.created_at) %> ago.
 							  </h4>
 								<hr />
-											<!--<%= render 'comment_fields' %></br>-->
+									
+											<%= render :partial => "comments/form", :locals => { :micropost => micropost } %>
 										<% end %>
 								
-
 			</div>
 </body>
 

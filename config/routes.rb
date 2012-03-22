@@ -16,8 +16,14 @@ MyMvp::Application.routes.draw do
   resources :baseballs
   resources :users
 	resources :identities
-	resources :microposts
-	resources :comments, :belongs_to => :microposts
+	#resources :microposts
+	#resources :comments, :belongs_to => :microposts
+
+resources :microposts do
+  resources :comments
+end
+
+
 
   get "basketballs/new"
   get "basketballs/index"
@@ -41,6 +47,8 @@ MyMvp::Application.routes.draw do
 	match 'baseball_stats/' => 'users#baseball_stats'	
 	match 'baseball_video/' => 'users#baseball_video'
 	match 'profile/' => 'users#profile'
+  #match "/microposts/:id/comments" => "microposts#comments"
+
 
 	#match 'microposts/:id/show' => 'microposts#show'
 

@@ -24,7 +24,7 @@ class MicropostsController < ApplicationController
   end
 
   def new
-		@micropost = Micropost.new
+		@micropost = Micropost.new(params[:micropost])
   end
 
 	def create

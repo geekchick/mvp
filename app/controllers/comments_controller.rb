@@ -1,10 +1,13 @@
 class CommentsController < ApplicationController
-  def create
-	  @comment = Comment.new(params[:comment])
-    @comment.user_id = current_user.id
-		#@micropost = Micropost.find(params[:micropost_id])
-    @comment.micropost_id = params[:micropost_id]
 
+	def new
+		@comment = Comment.new(params[:comment])
+	end
+
+  def create
+			@comment = Comment.new(params[:comment])
+		  @comment.user_id = current_user.id
+	    @comment.micropost_id = params[:micropost_id]
 
 		  if @comment.save
 				

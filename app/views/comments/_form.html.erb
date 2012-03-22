@@ -1,0 +1,10 @@
+
+	<%= form_for ([micropost, Comment.new]) do |f| %>
+
+
+	<%= f.text_field :content, :class => "CommentText", :placeholder => "Write a Comment..." %>
+	<div class="CommentButtonContainer">
+	<%= f.submit "Comment", :class => "CommentButton b1" %>
+	<% end %>
+
+

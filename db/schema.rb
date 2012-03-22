@@ -47,7 +47,8 @@ ActiveRecord::Schema.define(:version => 20120314014147) do
     t.datetime "updated_at"
   end
 
-  add_index "comments", ["user_id", "micropost_id"], :name => "index_comments_on_user_id_and_micropost_id"
+  add_index "comments", ["micropost_id", "created_at"], :name => "index_comments_on_micropost_id_and_created_at"
+  add_index "comments", ["user_id", "created_at"], :name => "index_comments_on_user_id_and_created_at"
 
   create_table "identities", :force => true do |t|
     t.string   "name"

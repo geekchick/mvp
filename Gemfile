@@ -13,14 +13,14 @@ gem 'faker'
 
 gem 'commenter'
 
-
-
 group :production, do
 	gem 'pg', '~> 0.12.2'
 end
 
 
 gem 'omniauth-facebook'
+gem 'omniauth-twitter'
+
 
 group :development, :test do
 	gem 'mysql2', '< 0.3'
