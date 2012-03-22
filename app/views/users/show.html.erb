@@ -31,7 +31,13 @@
 <!-- Profile Picture -->
 	<% if @user.provider == 'facebook' %> 
 			<%= image_tag "http://graph.facebook.com/#{@user.uid}/picture" %>		
-	<% else %>
+	<% end %>
+
+	<% if @user.provider == 'twitter' %>
+			<%= image_tag	"http://api.twitter.com/1/users/profile_image/#{@user.uid}.format" %>
+	<% end %>				
+
+	<% if @user.provider != 'facebook' && @user.provider != 'twitter' %>
 			<%= image_tag @user.gravatar_url %>
   <% end %>
 

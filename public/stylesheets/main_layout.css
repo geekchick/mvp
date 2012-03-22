@@ -133,3 +133,16 @@ aside {
   }
 }
 
+.authentication {
+  width: 130px;
+  float: left;
+  background-color: #EEE;
+  border: solid 1px #999;
+  padding: 5px 10px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  position: relative;
+  margin-right: 10px;
+}
+
+
