@@ -1,17 +1,10 @@
+<!DOCTYPE HTML>
 
-<!DOCTYPE html>
-<h1>Welcome to sign up!</h1>
-<head>
-	<title>Sign Up</title>
-
-</head>
-
-<body>
-		<% if current_user %>
-  Welcome <%= current_user.name %>!
-  <%= link_to "Sign Out", signout_path %>
-<% else %>
-<% end %>
+<html class="no-js" lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<title>CompanyName - Worldwide Scout </title>
+		<%= stylesheet_link_tag "layout_main.css" %>
 
 <!--Facebooker Login button on signup page -->
 <div id="fb-root"></div>
@@ -39,20 +32,27 @@
 </script>
 
 
-	
-<!-- Begin Facebook Login -->
+	</head>
+
+	<body>
+		<!-- BEGIN Main Header -->
+		<div id="header-bar">
+
+		</div>
+		<!-- END Main Header -->
+				<div id="preview">
+				
+				  	<!-- Begin Facebook Login -->
 <a href="/auth/facebook" class="auth_provider">
- 			<%= image_tag "facebook_64.png", :alt => "Facebook" %>  </div>
+ 			<%= image_tag "facebook_64.png", :alt => "Facebook" %> 
 </a>
 <!-- End Facebook Login -->
+
 <!-- Begin Twitter Login -->
 <a href="/auth/twitter" class="auth_provider">
-	
 	<%= image_tag "twitter_64.png", :alt => "Twitter"  %>
 </a>
 <!-- End Twitter Login -->
-
-
 
 <p>
   or
@@ -72,8 +72,8 @@
   </div>
   <div class="actions"><%= submit_tag "Login" %></div>
 <% end %>
-</p>
 
-</body>
+				</div>
 
-
+		</body>
+</html>

@@ -1,5 +1,5 @@
 <%= @microposts.each do |micropost| %>
-	<span class="content"><%= micropost.content %></span> <br />
+	<%= micropost.content %><br />
 	Posted <%= time_ago_in_words(micropost.created_at) %> ago. <br />
 <% end %>
 

@@ -1,0 +1,66 @@
+<!doctype html>
+	<html lang="en">
+		<head>
+			<meta charset="utf-8"/>
+			<title>Micropost</title>
+		  <%= stylesheet_link_tag "main_layout" %>
+
+		</head>
+<body>
+		<!-- Begin Intro -->
+			<div id="company_intro">
+				<div id="content">
+					<h5>Be the first to sign up!</h5>
+				</div>
+			</div>
+		  <!-- End Intro -->
+
+		
+			<div id="profile"><%= button_to "Create Profile", :controller => 'users', :action => 'user_criteria' %></div>
+	
+		<!-- Begin Render Micropost Form -->
+			<div id="form"><%= render 'form' %></div>
+		<!-- End Render Micropost Form -->
+
+			<div id="section_main" class="section_main">
+						<div id="main_body">
+							<div id="header">
+								<h1 class="message">Start Posting!</h1>
+							</div>
+						</div>
+										<% @microposts.each do |micropost| %>
+										
+											    <% if micropost.user.provider == 'facebook' %>
+														<span class="profile_pic"><%= image_tag "http://graph.facebook.com/#{micropost.user.uid}/picture" %></span>		
+													<% end %>
+
+													<% if micropost.user.provider == 'twitter' %>
+														<%= image_tag	"http://api.twitter.com/1/users/profile_image/#{micropost.user.uid}.format" %>
+													<% end %>						
+
+													<% if micropost.user.provider != 'twitter' && micropost.user.provider != 'facebook' %>
+														<span class="profile_pic"><%= image_tag micropost.user.gravatar_url %></span>
+													<% end %>
+						<span class="name"><%= micropost.user.name %></span>
+								<span class="content">
+											<%= micropost.content %><br />
+								</span>
+								<h4>
+										Posted <%= time_ago_in_words(micropost.created_at) %> ago.
+							  </h4>
+							<%= render :partial => "comments/form", :locals => { :micropost => micropost } %>
+
+							
+							<%= render :partial => "comments/display" %>
+
+								<hr />
+									
+				
+										<% end %>
+								
+			</div>
+</body>
+
+	</html>
+
+

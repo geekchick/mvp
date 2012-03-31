@@ -1,61 +1,92 @@
-<!doctype html>
-	<html lang="en">
-		<head>
-			<meta charset="utf-8"/>
-			<title>Micropost</title>
-		  <%= stylesheet_link_tag "main_layout" %>
+<!DOCTYPE HTML>
 
-		</head>
-<body>
-		<!-- Begin Intro -->
-			<div id="company_intro">
-				<div id="content">
-					<h5>Be the first to sign up!</h5>
-				</div>
-			</div>
-		  <!-- End Intro -->
+<html class="no-js" lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<title>CompanyName - Worldwide Scout </title>
+		<%= stylesheet_link_tag "layout_main.css" %>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/
+libs/jquery/1.3.0/jquery.min.js"></script>
+<script type="text/javascript">
+$(function()
+{
+$(".view_comments").click(function()
+{
+var ID = $(this).attr("id");
 
-		
-			<div id="profile"><%= button_to "Create Profile", :controller => 'users', :action => 'user_criteria' %></div>
+$.ajax({
+type: "POST",
+url: "viewajax.php",
+data: "msg_id="+ ID,
+cache: false,
+success: function(html){
+$("#view_comments"+ID).prepend(html);
+$("#view"+ID).remove();
+$("#two_comments"+ID).remove();
+}
+});
+return false;
+});
+});
+</script>
+	</head>
+
+	<body>
+		<!-- BEGIN Main Header -->
+		<div id="header-bar">
+
+		</div>
+		<!-- END Main Header -->
+
+<%= button_to "Create Your Profile", {:controller => 'users', :action => 'user_criteria'}, {:class => 'profile'} %>
 	
 		<!-- Begin Render Micropost Form -->
 			<div id="form"><%= render 'form' %></div>
 		<!-- End Render Micropost Form -->
 
-			<div id="section_main" class="section_main">
-						<div id="main_body">
-							<div id="header">
-								<h1 class="message">Start Posting!</h1>
-							</div>
-						</div>
-										<% @microposts.each do |micropost| %>
-										
-											    <% if micropost.user.provider == 'facebook' %>
-														<span class="profile_pic"><%= image_tag "http://graph.facebook.com/#{micropost.user.uid}/picture" %></span>		
+		<div id="preview" >
+				<div id="wrap_me" >
+	
+<% @microposts.each do |micropost| %>
+
+											   <% if micropost.user.provider == 'facebook' %>
+													<div class="profile_pic"><%= image_tag "http://graph.facebook.com/#{micropost.user.uid}/picture", :size => "60x60" %></div>
 													<% end %>
 
-													<% if micropost.user.provider == 'twitter' %>
-														<%= image_tag	"http://api.twitter.com/1/users/profile_image/#{micropost.user.uid}.format" %>
-													<% end %>						
+												<% if micropost.user.provider == 'twitter' %>
+													
+													<div class="profile_pic"><%= image_tag	"http://api.twitter.com/1/users/profile_image/#{micropost.user.uid}.format",  :size => "60x60" %></div>
+													<% end %>					
 
 													<% if micropost.user.provider != 'twitter' && micropost.user.provider != 'facebook' %>
-														<span class="profile_pic"><%= image_tag micropost.user.gravatar_url %></span>
+														<span class="profile_pic"><%= image_tag micropost.user.gravatar_url, :size => "60x60" %></span>
 													<% end %>
-						<span class="name"><%= micropost.user.name %></span>
-								<span class="content">
-											<%= micropost.content %><br />
-								</span>
-								<h4>
-										Posted <%= time_ago_in_words(micropost.created_at) %> ago.
-							  </h4>
-								<hr />
-									
-											<%= render :partial => "comments/form", :locals => { :micropost => micropost } %>
-										<% end %>
+	
+					<div id="headings"><h5 class="name"><%= micropost.user.name %></h5>
 								
-			</div>
-</body>
+					<p class="content"><%= micropost.content %>
+<h6 class="timestamp">Posted <%= time_ago_in_words(micropost.created_at) %> ago.</h6></p>
 
-	</html>
+          
+</div>
+
+				
+			 <!--<a href="#" class="view_comments" >View all &nbsp;<%= micropost.comments.count %> comments </a><br />-->
+
+						<%= render :partial => "comments/display", :locals => { :micropost => micropost } %>
+
+			
+						<%= render :partial => "comments/form", :locals => { :micropost => micropost } %> 
+<hr style="width:45em;border:.1em solid #f5f5f5; margin-left: 10px;" />
+			
+			
+	<% end %>
+		</div>
+		</div>
 
 
+	</body>
+
+
+
+</html>
