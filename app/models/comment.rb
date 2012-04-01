@@ -7,6 +7,6 @@ class Comment < ActiveRecord::Base
 	validates :content, presence: true, length: {maximum: 140 }
 	
 
-  default_scope order: 'comments.created_at DESC'
+  Comment.find(:all, :order => 'created_at DESC')
 
 end
