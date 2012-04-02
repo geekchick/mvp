@@ -1,11 +1,11 @@
 
 
 <% micropost.comments.each do |comment| %>
-	   <% if comment.user.provider == 'facebook' %>
+	   <% if comment.user.provider = 'facebook' %>
 						<span class="profile_pic2"><%= image_tag "http://graph.facebook.com/#{comment.user.uid}/picture", :size => "30x30" %></span>		
 		<% end %>
 
-			<% if comment.user.provider == 'twitter' %>
+			<% if comment.user.provider = 'twitter' %>
 							<%= image_tag	"http://api.twitter.com/1/users/profile_image/#{comment.user.uid}.format", :size => "30x30"  %>
 			<% end %>
 			
