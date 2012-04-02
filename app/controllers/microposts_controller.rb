@@ -3,7 +3,7 @@ class MicropostsController < ApplicationController
 
   def index
 		@microposts = Micropost.all
-		@comments = Comment.all
+		#@comments = Comment.all
 
 		#@microposts = Micropost.paginate(page: params[:page])
 
