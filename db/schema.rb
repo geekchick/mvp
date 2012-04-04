@@ -12,24 +12,6 @@
 
 ActiveRecord::Schema.define(:version => 20120314014147) do
 
-  create_table "baseball_profiles", :force => true do |t|
-    t.string   "hits"
-    t.string   "runs"
-    t.string   "homeruns"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "basketball_profiles", :force => true do |t|
-    t.string   "ppg"
-    t.string   "rpg"
-    t.string   "apg"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "basketballs", :force => true do |t|
     t.string   "ppg"
     t.string   "rpg"
@@ -50,7 +32,7 @@ ActiveRecord::Schema.define(:version => 20120314014147) do
   add_index "comments", ["micropost_id", "created_at"], :name => "index_comments_on_micropost_id_and_created_at"
   add_index "comments", ["user_id", "created_at"], :name => "index_comments_on_user_id_and_created_at"
 
-  create_table "identities", :force => true do |t|
+  create_table "identities", :primary_key => "identity_id", :force => true do |t|
     t.string   "name"
     t.string   "email"
     t.string   "password_digest"
@@ -66,47 +48,6 @@ ActiveRecord::Schema.define(:version => 20120314014147) do
   end
 
   add_index "microposts", ["user_id", "created_at"], :name => "index_microposts_on_user_id_and_created_at"
-
-  create_table "people", :force => true do |t|
-    t.string   "name"
-    t.date     "birthdate"
-    t.string   "country"
-    t.string   "sport"
-    t.string   "height"
-    t.string   "weight"
-    t.string   "vid_url"
-    t.string   "profile_image"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "players", :primary_key => "player_id", :force => true do |t|
-    t.string   "name"
-    t.date     "birthdate"
-    t.string   "country"
-    t.string   "sport"
-    t.string   "height"
-    t.string   "weight"
-    t.string   "vid_url"
-    t.string   "profile_image"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "profiles", :force => true do |t|
-    t.date     "birthdate"
-    t.string   "title"
-    t.string   "sport"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "recipes", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "users", :force => true do |t|
     t.string   "provider"
@@ -130,6 +71,7 @@ ActiveRecord::Schema.define(:version => 20120314014147) do
     t.string   "video_url"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "avatar_url"
   end
 
 end

@@ -49,18 +49,18 @@ return false;
 	
 <% @microposts.each do |micropost| %>
 
-											   <% if micropost.user.provider = 'facebook' %>
-													<!--<span class="profile_pic"><%= image_tag "http://graph.facebook.com/#{micropost.user.uid}/picture", :size => "60x60" %></span-->
+											   <% if micropost.user.provider == 'facebook' %>
+													<span class="profile_pic"><%= image_tag "http://graph.facebook.com/#{micropost.user.uid}/picture", :size => "60x60" %></span>
 													<% end %>
 
-												<!--<% if micropost.user.provider = 'twitter' %>
+												<% if micropost.user.provider == 'twitter' %>
 													
 													<div class="profile_pic"><%= image_tag	"http://api.twitter.com/1/users/profile_image/#{micropost.user.uid}.format",  :size => "60x60" %></div>
-													<% end %>					-->
+													<% end %>	
 
-													<!--<% if micropost.user.provider != 'twitter' && micropost.user.provider != 'facebook' %>
+													<% if micropost.user.provider != 'twitter' && micropost.user.provider != 'facebook' %>
 														<span class="profile_pic"><%= image_tag micropost.user.gravatar_url, :size => "60x60" %></span>
-													<% end %>-->
+													<% end %>
 	
 					<div id="headings"><h5 class="name"><%= micropost.user.name %></h5>
 								
@@ -73,7 +73,7 @@ return false;
 				
 			 <!--<a href="#" class="view_comments" >View all &nbsp;<%= micropost.comments.count %> comments </a><br />-->
 
-						<!--<%= render :partial => "comments/display", :locals => { :micropost => micropost } %>-->
+						<%= render :partial => "comments/display", :locals => { :micropost => micropost } %>
 
 			
 						<%= render :partial => "comments/form", :locals => { :micropost => micropost } %> 
