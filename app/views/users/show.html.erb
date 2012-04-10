@@ -1,36 +1,29 @@
-<!doctype html>
-	<html lang="en">
-		<head>
-			<meta charset="utf-8"/>
-			<title>Micropost</title>
-		  <%= stylesheet_link_tag "main_layout" %>
+<!DOCTYPE HTML>
 
-		</head>
-<body>
-		<!-- Begin Intro -->
-			<div id="company_intro">
-				<div id="content">
-					<h5>Your Profile!</h5>
-				</div>
-			</div>
-		  <!-- End Intro -->
+<html class="no-js" lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<title>CompanyName - Worldwide Scout </title>
+		<%= stylesheet_link_tag "layout_main.css" %>
+	</head>
 
+	<body>
+		<!-- BEGIN Main Header -->
+		<div id="header-bar">
 
-			<div id="section_profile" class="section_profile">
-						<div id="main_body">
-							<div id="header">
-								<h1 class="message"></h1>
-							</div>
-			</div>
-									
-								    <td class="main">
-      <h1>	  
+		</div>
+		<!-- END Main Header -->
+
+		<div id="preview2" >
+		
+			 <h1>	  
         <%= @user.name %>
       </h1>
 
+
 <!-- Profile Picture -->
 	<% if @user.provider == 'facebook' %> 
-			<%= image_tag "http://graph.facebook.com/#{@user.uid}/picture" %>		
+			<%= image_tag "http://graph.facebook.com/#{@user.uid}/picture", :class => 'resize' %>		
 	<% end %>
 
 	<% if @user.provider == 'twitter' %>
@@ -42,13 +35,22 @@
   <% end %>
 
 
-    </td>
-   
-  </tr>
 
-</table>
-			
-<div>
+
+
+		<div class="nippleBox">
+			<div class="bar">
+					<h4>Microposts (<%= @user.microposts.count %>)</h4>
+			</div>
+				<% if	@user.microposts.any? %>
+		
+        	<div class="content"><%= render 'microposts/micropost' %></div>
+
+				<% end %>
+ 	<%= paginate @microposts %>
+		</div>
+
+<div class="view_edit">
 	<% if @user.sport == 'Basketball' && @user.role == 'Player' %>
 		<%= link_to "Edit My Profile", basketball_personal_path %> |
 		<%= link_to "View My Profile", profile_path %>
@@ -59,16 +61,9 @@
 <% end %>
 
 </div>
-		<% if	@user.microposts.any? %>
-			  <h3>Microposts (<%= @user.microposts.count %>)</h3>
-				<ol class="microposts">
-        <%= render @microposts %>
-      </ol>
-
-		<% end %>
 	
-</body>
 
-	</html>
+		</div>
+	</body>
 
-
+</html>

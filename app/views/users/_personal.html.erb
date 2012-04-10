@@ -1,5 +1,5 @@
 <h3>Edit Your Personal Information</h3>
-<%= form_for (@user) do |f| %>
+<%= twitter_bootstrap_form_for (@user) do |f| %>
 	<%=f.label :name %>
 	<%= f.text_field :name %><br />
 	<%=f.label :birthdate %>
@@ -8,9 +8,10 @@
 	<%= f.select(:gender, ["N/A", "Female", "Male"]) %><br />
 	<%=f.label :country %>
 	<%= f.text_field :country %><br />
-	<%=f.label :bio %>
-	<%= f.text_area :bio %><br />
+  <%=f.label :bio %>
+  <div class="textbio"><%= f.text_area :bio, :align => 'left' %></div><br />
+
 	
 	<%= f.submit 'Update' %>
 
-<% end %>
+<% end %>	

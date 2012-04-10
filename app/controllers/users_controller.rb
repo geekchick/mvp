@@ -45,7 +45,8 @@ class UsersController < ApplicationController
 	def show
 		@user = User.find(params[:id])
     #@microposts = @user.microposts.paginate(page: params[:page])
-	 	@microposts = @user.microposts
+	  @microposts = @user.microposts.page(params[:page]).per(5)
+		#@microposts = Micropost.order(:user).page(params[:page])
 		
     respond_to do |format|
       format.html # show.html.erb

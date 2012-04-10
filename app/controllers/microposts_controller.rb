@@ -5,7 +5,7 @@ class MicropostsController < ApplicationController
 		@microposts = Micropost.all
 		#@comments = Comment.all
 
-		#@microposts = Micropost.paginate(page: params[:page])
+		#@microposts = Micropost.paginate(page params[:page])
 
  		respond_to do |format|
       format.html # index.html.erb
@@ -15,6 +15,7 @@ class MicropostsController < ApplicationController
 
   def show
 		@microposts = Micropost.where(:user_id => current_user.id).page(params[:page])
+
 		@micropost = Micropost.find(current_user.id)
 
 

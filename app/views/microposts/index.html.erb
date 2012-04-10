@@ -7,6 +7,14 @@
 		<%= stylesheet_link_tag "layout_main.css" %>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/
 libs/jquery/1.3.0/jquery.min.js"></script>
+		<script type="text/javascript" src="/javascripts/mootools.js"></script>
+<script type="text/javascript" src="/javascripts/mootools_more.js"></script>
+<script type="text/javascript" src="/javascripts/diabox.js"></script>
+
+<script type="text/javascript">
+    window.addEvent('domready', function(){ window.diabox = new Diabox({gallery : {enabled : true}}); });
+</script>
+
 <script type="text/javascript">
 $(function()
 {
@@ -37,8 +45,9 @@ return false;
 
 		</div>
 		<!-- END Main Header -->
-
-<%= button_to "Create Your Profile", {:controller => 'users', :action => 'user_criteria'}, {:class => 'profile'} %>
+		
+<div id="create_profile"><%= link_to "Create Your Profile", user_criteria_path %></div>
+<!--<%= button_to "Create Your Profile", {:controller => 'users', :action => 'user_criteria'}, {:class => 'profile'} %>-->
 	
 		<!-- Begin Render Micropost Form -->
 			<div id="form"><%= render 'form' %></div>
