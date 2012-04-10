@@ -4,7 +4,6 @@
 	<head>
 		<meta charset="utf-8"/>
 		<title>CompanyName - Worldwide Scout </title>
-		<%= stylesheet_link_tag "layout_main.css" %>
 	</head>
 
 	<body>
@@ -33,8 +32,6 @@
 	<% if @user.provider != 'facebook' && @user.provider != 'twitter' %>
 			<%= image_tag @user.gravatar_url %>
   <% end %>
-
-
 
 
 

@@ -1,0 +1,317 @@
+html body {
+    background-color: #f5f5f5;
+    color: #6E6E6E;
+    font-family: arial;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    width: 100%;
+		overflow-y: scroll;
+
+}
+
+.resize {
+width: 150px;
+height : auto;
+}
+
+.view_edit {
+
+	margin-top: 30px;
+	font-size: 14px;
+
+
+}
+
+
+
+#header-bar {
+    background-color: #000000;
+    height: 53px;
+    line-height: 53px;
+    margin-bottom: 1px;
+    z-index: 100;
+
+		
+}
+
+#create_profile {
+float: right;
+color: red;
+
+}
+
+#profile {
+	margin-top: -80px;
+
+
+}
+
+
+#preview {
+    background-color: #ffffff;
+    width: 800px;
+		height: auto;
+		margin-top: 100px;
+		margin-left: 80px;
+
+}
+
+#preview2 {
+    background-color: #ffffff;
+    width: 800px;
+		height: 500px;
+		margin-top: 50px;
+		margin-left: 150px;
+
+}
+
+#wrap_me {
+
+	width: 550px;
+
+}
+
+.profile_pic {
+ float:left;
+ margin: 20px;
+}
+
+
+ #headings {
+	position:relative;
+	top: 15px;
+	
+	
+}
+
+.profile_pic2 {
+ float:left;
+ margin: 35px;
+
+}
+
+
+ #headings2 {
+	position:relative;
+	top: 25px;
+	
+	
+}
+
+	h5.name {
+		
+			color: #50839C;
+			font: bold;
+
+		}
+
+
+	h5.name2 {
+		
+			color: #50839C;
+			font: bold;
+
+		}
+
+
+
+p.content 	{
+		
+		color: #222225;
+		font: normal;
+		position: relative;
+		top: -10px;
+
+		 
+}
+
+
+
+h6.timestamp {
+color: $grayLight;
+font-size: 10px;
+margin-left: 100px;
+margin-top: -15px;
+position: relative;
+
+}
+
+h6.timestamp2 {
+color: $grayLight;
+font-size: 10px;
+margin-left: 100px;
+margin-top: -15px;
+position: relative;
+
+}
+
+.textbio {
+
+	margin-top: 90px;
+	margin-left: 35px;
+
+
+}
+
+textarea {
+  height: 110px;
+	width:  250px;
+  margin-top: -115px;
+	margin-right: -5px;
+
+}
+
+
+.personal {
+	margin-top: 50px;
+	margin-left: 250px;
+
+}
+
+
+
+
+
+
+.button, button:visited {
+font-weight: bold; 
+background-color: #1257A1; 
+display: inline-block; 
+padding: 5px 10px 6px; 
+color: #fff; 
+text-decoration: none;
+-moz-border-radius: 6px; 
+-webkit-border-radius: 6px;
+position: relative;
+cursor: pointer;
+float: right;
+
+}
+ 
+	.button:hover { 
+	background-image: linear-gradient(bottom, rgb(30,63,99) 17%, rgb(18,87,161) 59%);
+background-image: -o-linear-gradient(bottom, rgb(30,63,99) 17%, rgb(18,87,161) 59%);
+background-image: -moz-linear-gradient(bottom, rgb(30,63,99) 17%, rgb(18,87,161) 59%);
+background-image: -webkit-linear-gradient(bottom, rgb(30,63,99) 17%, rgb(18,87,161) 59%);
+background-image: -ms-linear-gradient(bottom, rgb(30,63,99) 17%, rgb(18,87,161) 59%);
+
+background-image: -webkit-gradient(
+	linear,
+	left bottom,
+	left top,
+	color-stop(0.17, rgb(30,63,99)),
+	color-stop(0.59, rgb(18,87,161))
+);
+
+
+color: #fff; 
+
+}
+
+#comments_display {
+
+	margin-left: 40px;
+
+
+}
+
+#comment_form {
+
+	margin-left: 95px;
+
+}
+	
+
+
+.profile, profile:visited {
+	background: #c91200 url(overlay.png) repeat-x;
+    display: inline-block;
+    padding: 5px 14px 26px;
+    color: #fff;
+    text-decoration: none;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.6);
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.6);
+    text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+    border-bottom: 1px solid rgba(0,0,0,0.25);
+    position: relative;
+    cursor: pointer
+		float: right;
+	
+
+}
+ 
+
+color: #fff; 
+
+}
+
+
+
+
+div.nippleBox {
+    overflow: hidden;
+    position: relative;
+}
+div.nippleBox div.bar {
+    background-color: #4EBAFF;
+    height: 25px;
+    text-align: left;
+    width: 500px;
+	  margin-top: -150px;
+		margin-left: 250px;
+}
+div.nippleBox div.bar h4 {
+    color: #FFFFFF;
+    float: left;
+    font-family: verdana,sans-serif;
+    font-size: 11px;
+    line-height: 25px;
+    margin: 0;
+    padding: 0 0 0 8px;
+    text-align: left;
+}
+div.nippleBox div.bar a.toggle {
+    color: #FFFFFF;
+    display: block;
+    float: right;
+    margin: 6px 5px 0 0;
+}
+div.nippleBox div.nipple {
+    border-color: #4EBAFF transparent -moz-use-text-color;
+    border-style: solid solid none;
+    border-width: 6px 6px 0;
+    height: 0;
+    left: 16px;
+    position: absolute;
+    top: 24px;
+    width: 0;
+    z-index: 2;
+}
+div.nippleBox div.content {
+    position: relative;
+    z-index: 1;
+		margin-left: 250px;
+}
+div.nippleBox div.bar div.content {
+    color: #FFFFFF;
+    float: left;
+    font: bold 11px/11px verdana,sans-serif;
+    left: 8px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    top: 7px;
+}
+div.nippleBox .plus_promo {
+    margin: 0 0 20px;
+}
+
+
+
+
+
+

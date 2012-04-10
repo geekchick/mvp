@@ -1,5 +1,5 @@
 <h3>Edit Your Personal Information</h3>
-<%= twitter_bootstrap_form_for (@user) do |f| %>
+<%= form_for (@user) do |f| %>
 	<%=f.label :name %>
 	<%= f.text_field :name %><br />
 	<%=f.label :birthdate %>
