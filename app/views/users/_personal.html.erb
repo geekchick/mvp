@@ -1,17 +1,31 @@
-<h3>Edit Your Personal Information</h3>
+<h1 class="edit_personal">Edit / Personal Info</h1>
 <%= form_for (@user) do |f| %>
-	<%=f.label :name %>
-	<%= f.text_field :name %><br />
-	<%=f.label :birthdate %>
-	<%= f.date_select :birthdate %><br />
-	<%=f.label :gender %>
-	<%= f.select(:gender, ["N/A", "Female", "Male"]) %><br />
-	<%=f.label :country %>
-	<%= f.text_field :country %><br />
-  <%=f.label :bio %>
-  <div class="textbio"><%= f.text_area :bio, :align => 'left' %></div><br />
+<div class="personal2">
+	<ul>
+		<li>
+			<h4>First & Last Name <h4>
+			<%= f.text_field :name %>
+		</li>
+		<li>
+			<h4>Birthdate<h4>
+			<li>
+	<%= f.date_select :birthdate, :start_year => 1960, :prompt => { :day => 'Select day', :month => 'Select month', :year => 'Select year' } %>
+		</li>
+		<li>	
+			<h4>Gender<h4>
+  		<%= f.select(:gender, ["N/A", "Female", "Male"]) %>
+		</li>
+		<li>
+			<h4>Country</h4>
+			<%= f.select(:country, ["USA", "Iraq"]) %>
+		</li>
+		<li>
+			<h4>Bio</h4>
+		  <div class="textbio"><%= f.text_area :bio %></div>
+		</li>
 
-	
-	<%= f.submit 'Update' %>
+	</ul>
+</div>
+	<div class="button_personal"><%= f.submit 'Update', :class => "btn btn_profile" %></div>
 
-<% end %>	
+<% end %>	 

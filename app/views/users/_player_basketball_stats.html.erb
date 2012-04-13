@@ -1,3 +1,4 @@
+<h3>Edit Your Stats</h3>
 <%= form_for (@user) do |f| %>
 
 	<div class="field">
@@ -29,7 +30,7 @@
 		<%= f.text_field :spg %>
  </div>
 <div class="field">
-		<%= f.submit "Update" %>
+		<%= f.submit "Update", :class => 'btn btn_profile' %>
 </div>
 
 <% end %>

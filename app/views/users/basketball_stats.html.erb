@@ -1,61 +1,24 @@
+<!DOCTYPE HTML>
 
-<!doctype html>
-	<html lang="en">
-		<head>
-			<meta charset="utf-8"/>
-			<title>Micropost</title>
-		  <%= stylesheet_link_tag "main_layout" %>
+<html class="no-js" lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<title>CompanyName - Worldwide Scout </title>
+</head>
 
-		</head>
-<body>
-		<!-- Begin Intro -->
-			<div id="company_intro">
-				<div id="content">
-					<h5>Your Profile!</h5>
-				</div>
-			</div>
-		  <!-- End Intro -->
+	<body>
+		<!-- BEGIN Main Header -->
+		<div id="header-bar">
 
+		</div>
+		<!-- END Main Header -->
 
-			<div id="section_profile" class="section_profile">
-						<div id="main_body">
-							<div id="header">
-								<h1 class="message"></h1>
-							</div>
-			</div>
-									
-								    <td class="main">
-      <h1>	  
-        <%= @user.name %>
-      </h1>
+		<div id="preview2">
+			<%= render 'player_basketball_stats' %>
+				 <%= render 'basketball_links'  %>
 
+		</div>
 
-    </td>
-   
-  </tr>
-
-</table>
-			
-<div>
-
-<h1>Edit Your Basketball Stats</h1>
-<%= render 'basketball_links'  %>
-
-</div>
-		<%= render 'player_basketball_stats' %>
-	
-</body>
+ </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
-

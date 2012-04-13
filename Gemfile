@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.3'
+gem 'rails', '3.1.0'
 
 gem 'foreigner'
 gem 'rake', '0.8.7'
@@ -14,8 +14,16 @@ group :assets do
   gem 'sass-rails', "  ~> 3.1.0"
   gem 'coffee-rails', "~> 3.1.0"
   gem 'uglifier'
-	gem 'twitter-bootstrap-rails'
+	gem "less-rails", "~> 2.0.1"
+  gem 'less-rails-bootstrap'
+	gem 'bootstrap-sass'
+	#gem 'twitter-bootstrap'
+	#gem "twitter_bootstrap_form_for", "~> 1.0.5"
 end
+
+gem 'formtastic', " ~> 2.1.1"
+
+gem 'formtastic-bootstrap'
 
 gem 'execjs'
 

@@ -12,15 +12,24 @@
   <% end %>
 
 	<h2>Welcome <%= @user.name %>!</h2>
-  <div class="field">
-    <%= f.label :role %><br />
-		<%= f.select(:role, ["Player", "Team", "Agent"]) %>
-  </div>
-  <div class="field">
-    <%= f.label :sport %><br />
-    <%= f.select(:sport, ["Basketball", "Baseball", "Football"]) %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+<div class="criteria">
+	<ul>
+		<li>
+				<h4>Who are you? <h4>
+		</li>
+		<li>
+				<%= f.select(:role, ["Player", "Team", "Agent"]) %>
+		</li>		
+		<li>
+			<h4>What is your sport?</h4>
+		</li>
+		<li>
+	    <%= f.select(:sport, ["Basketball", "Baseball", "Football"]) %>
+		</li>
+
+	</ul>
+</div>
+
+    <div class="button_criteria"><%= f.submit :class => "btn btn_profile" %></div>
 <% end %>

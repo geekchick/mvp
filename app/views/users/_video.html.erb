@@ -1,5 +1,6 @@
+<h3>Edit Your Videos</h3>
 <%= form_for (@user) do |f| %>
-	<%= f.text_field :video_url %><%= f.submit "Update" %>
+	<%= f.text_field :video_url %><%= f.submit "Update", :class => 'btn btn_profile' %>
 	<% end %>
 
 	<% if @user.video_url.nil? %>
