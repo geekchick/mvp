@@ -17,7 +17,7 @@ group :assets do
 	gem "less-rails", "~> 2.0.1"
   gem 'less-rails-bootstrap'
 	gem 'bootstrap-sass'
-	#gem 'twitter-bootstrap'
+	gem 'twitter-bootstrap'
 	#gem "twitter_bootstrap_form_for", "~> 1.0.5"
 end
 
