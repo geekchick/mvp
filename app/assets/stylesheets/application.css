@@ -249,7 +249,7 @@ p.content 	{
 
 
 h6.timestamp {
-color: $grayLight;
+color: 	#C0C0C0;
 font-size: 10px;
 margin-left: 100px;
 margin-top: -15px;
@@ -258,7 +258,7 @@ position: relative;
 }
 
 h6.timestamp2 {
-color: $grayLight;
+color: 	#C0C0C0;
 font-size: 10px;
 margin-left: 100px;
 margin-top: -15px;
