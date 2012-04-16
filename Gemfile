@@ -21,6 +21,12 @@ group :assets do
 	#gem "twitter_bootstrap_form_for", "~> 1.0.5"
 end
 
+gem 'sass-rails', "  ~> 3.1.0"
+gem 'coffee-rails', "~> 3.1.0"
+gem 'uglifier'
+gem "less-rails", "~> 2.0.1"
+gem 'less-rails-bootstrap'
+gem 'bootstrap-sass'
 gem 'twitter-bootstrap'
 gem 'formtastic', " ~> 2.1.1"
 
