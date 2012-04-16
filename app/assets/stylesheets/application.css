@@ -35,6 +35,7 @@ font-size:0.75em; width:150px;
 margin-top: -450px;
 margin-left: 10px;
 }
+
 #navigation ul {margin:0; padding:0;}
 #navigation li {list-style: none;}
 
@@ -65,10 +66,23 @@ ul.top-level li {
 
 }
 
+.box_stat {
+	width: 30px;
+}
+
+.button_stat {
+		margin-left: 320px;
+
+}
 
 li { list-style-type: none;}
 
 .personal2 {
+	margin-right: -450px;
+
+}
+
+.stat2 {
 	margin-right: -450px;
 
 }
@@ -80,6 +94,11 @@ select {
 
 h1.edit_personal {
 	margin-left: -200px;
+
+}
+
+h1.edit_stats {
+	margin-left: 10px;
 
 }
 

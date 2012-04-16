@@ -21,6 +21,7 @@ group :assets do
 	#gem "twitter_bootstrap_form_for", "~> 1.0.5"
 end
 
+gem 'twitter-bootstrap'
 gem 'formtastic', " ~> 2.1.1"
 
 gem 'formtastic-bootstrap'

@@ -1,36 +1,39 @@
-<h3>Edit Your Stats</h3>
+<h1 class="edit_stats">Edit / Statistics</h1>
 <%= form_for (@user) do |f| %>
+;
+<div class="stat2">
+	<ul>
+		<li style="margin-left: 200px;">
+		  <h4>Position <h4>
+		  <%= f.select(:position, ["Point Guard", "Shooting Guard", "Swing Forward", "Power Forward", "Center"]) %>
+		</li>
+ 		<li>	
+    	<div style="float:left; margin-left: 200px; "><h4>Height</h4></div> 
+			<div style="float:right; margin-right: 800px;"><h4>Weight</h4></div>
+  	</li>
+ 		<li>	  
+				<div style="float:left; margin-left: 200px; "><%= f.select(:height, ["6'0", "6'1", "6'2"]) %></div>
+				<%= f.text_field :weight %>		
+		</li>
+		<li style="margin-left: 200px; ">
+   		<h4>Ppg</h4>
+			<%= f.text_field :ppg, :class => 'box_stat' %>
+		</li>
+		<li style="margin-left: 265px; margin-top: -65px;" >
+	    <h4>Rpg</h4>
+			<%= f.text_field :rpg, :class => 'box_stat' %>
+		</li>
+		<li style="margin-left: 330px; margin-top: -65px;" >
+    	<h4>Apg</h4>
+			<%= f.text_field :apg, :class => 'box_stat'  %>
+		</li>
+		<li style="margin-left: 395px; margin-top: -65px;" >
+    	<h4 class="box_stat">Spg</h4>
+			<%= f.text_field :spg, :class => 'box_stat'  %>
+		</li>
+	</ul>
+</div>
+		<div class="button_stat"><%= f.submit "Update", :class => 'btn btn_profile' %></div>
 
-	<div class="field">
-    <%= f.label :position %><br />
-    <%= f.select(:position, ["Point Guard", "Shooting Guard", "Swing Forward", "Power Forward", "Center"]) %>
-  </div>
-	<div class="field">
-    <%= f.label :height %><br />
-    <%= f.select(:height, ["6'0", "6'1", "6'2"]) %>
-  </div>
-  <div class="field">
-    <%= f.label :weight %><br />
-		<%= f.text_field :weight %>
-  </div>
- <div class="field">
-    <%= f.label :ppg %><br />
-		<%= f.text_field :ppg %>
- </div>
- <div class="field">
-    <%= f.label :rpg %><br />
-		<%= f.text_field :rpg %>
-</div>
-<div class="field">
-    <%= f.label :apg %><br />
-		<%= f.text_field :apg %>
-</div>
- <div class="field">
-    <%= f.label :spg %><br />
-		<%= f.text_field :spg %>
- </div>
-<div class="field">
-		<%= f.submit "Update", :class => 'btn btn_profile' %>
-</div>
 
 <% end %>
