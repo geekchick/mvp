@@ -36,6 +36,7 @@ gem 'execjs'
 
 gem 'therubyracer'
 
+gem "country-select"
 
 gem 'jquery-rails'
 
@@ -53,6 +54,7 @@ end
 
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
+gem "omniauth-linkedin", "~> 0.0.6"
 
 
 group :development, :test do

@@ -1,11 +1,27 @@
-<h3>Edit Your Videos</h3>
-<%= form_for (@user) do |f| %>
-	<%= f.text_field :video_url %><%= f.submit "Update", :class => 'btn btn_profile' %>
-	<% end %>
 
-	<% if @user.video_url.nil? %>
+<h1 class="edit_personal">Edit / Videos</h1>
+<%= form_for (@user) do |f| %>
+<div class="personal2">
+	<ul>
+		<li>
+			<h4 style="float:left; padding-right: 10px;">Upload Video<h4>
+			<%= f.text_field :video_url_1 %>
+		</li>
+		<li>
+			<h4 style="float:left; padding-right: 10px;">Upload Video<h4>
+			<%= f.text_field :video_url_2 %>
+		<li>	
+			<h4 style="float:left; padding-right: 10px;">Upload Video<h4>
+  		<%= f.text_field :video_url_3 %>
+		</li>
+		<li>
+			<%= f.submit "Update", :class => 'btn btn_profile' %>
+		</li>
+
+	</ul>
+</div>
+
+<% end %>	 
+
 	
-	<% else %>
-	<% aha = UnvlogIt.new(@user.video_url) %>
-	<%= aha.embed_html(300, 266).html_safe %>
-<% end %>
+

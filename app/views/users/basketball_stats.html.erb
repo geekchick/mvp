@@ -3,22 +3,68 @@
 <html class="no-js" lang="en">
 	<head>
 		<meta charset="utf-8"/>
-		<title>CompanyName - Worldwide Scout </title>
+		<title>ScoutBuzz </title>
+			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" ></script>
+
+<script type="text/javascript">
+		
+		$(document).ready(function() {
+	
+			$('.lightbox4').click(function() {
+				$('.backdrop4, .box4' ).animate({'opacity':'.50'}, 300, 'linear');
+			  $('.box4' ).animate({'opacity':'1.00'}, 300, 'linear');
+				$('.backdrop4, .box4').css('display', 'block');
+			});	
+
+			$('.close').click(function(){
+					close_box4();
+				});
+ 
+				$('.backdrop4').click(function(){
+					close_box4();
+				});
+
+
+		});	
+
+function close_box4()
+			{
+				$('.backdrop4, .box4').animate({'opacity':'0'}, 300, 'linear', function(){
+					$('.backdrop4, .box4').css('display', 'none');
+				});
+			}
+
+
+	</script>
+
 </head>
 
 	<body>
 		<!-- BEGIN Main Header -->
-		<div id="header-bar">
+		 <div class="navbar">
+   		<div class="navbar-inner">
+   		 <div class="container">
+					<a class="brand" href="#">ScoutBuzz</a>
+					<ul style="margin-left: 165px; margin-top: 10px;" class="nav pull-right">
+						<li>
+							
+						</li>
 
-		</div>
+					</ul>
+  		 </div>
+    	</div>
+    </div>
 		<!-- END Main Header -->
 
-		<div id="preview2">
-			<%= render 'player_basketball_stats' %>
-				 <%= render 'basketball_links'  %>
+	<%= render 'bstats' %>
 
+		<div id="preview2" >
+			
+			<div class="personal"><%= render 'player_basketball_stats' %></div>
+		  <%= render 'basketball_links' %>
+			<a href="#" class="lightbox4" >stats</a>
 		</div>
-
- </body>
+			
+	</body>
 
 </html>

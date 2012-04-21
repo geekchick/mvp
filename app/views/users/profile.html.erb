@@ -15,7 +15,7 @@
 		<%= @user.bio %>
 
 <h3>Stat information for <%= @user.name %></h3>
-		 	<%= @user.position %><br />
+	<%= @user.position %><br />
  	<%= @user.height %><br />
  	<%= @user.weight %><br />
  	<%= @user.ppg %><br />
@@ -23,10 +23,24 @@
 
 <h3>Game Video for <%= @user.name %></h3>
 
-	<% if @user.video_url.nil? %>
-		
+	<% if @user.video_url_1.nil? %>
+			<p>No VIDEO!</p>
 	<% else %>
-		<% aha = UnvlogIt.new(@user.video_url) %>
+		<% aha = UnvlogIt.new(@user.video_url_1) %>
 		<%= aha.embed_html(300, 266).html_safe  %>
 	<% end %>
+
+	<% if @user.video_url_2.nil? %>
+			<p>No VIDEO!</p>
+	<% else %>
+		<% aha = UnvlogIt.new(@user.video_url_2) %>
+		<%= aha.embed_html(300, 266).html_safe  %>
+	<% end %>
+
+	<% if @user.video_url_3.nil? %>
+			<p>No VIDEO!</p>
+	<% else %>
+		<% aha = UnvlogIt.new(@user.video_url_3) %>
+		<%= aha.embed_html(300, 266).html_safe %>
+<% end %>
 	

@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
 		#@microposts = @user.microposts.paginate(page: params[:page])
     #@title = @user.name
+		#@user = User.find(current_user.id)
 		
 	end
 

@@ -36,16 +36,60 @@ return false;
 });
 });
 </script>
+
+<script type="text/javascript">
+		
+		$(document).ready(function() {
+	
+			$('.lightbox3').click(function() {
+				$('.backdrop3, .box3' ).animate({'opacity':'.50'}, 300, 'linear');
+			  $('.box3' ).animate({'opacity':'1.00'}, 300, 'linear');
+				$('.backdrop3, .box3').css('display', 'block');
+			});	
+
+			$('.close').click(function(){
+					close_box3();
+				});
+ 
+				$('.backdrop3').click(function(){
+					close_box3();
+				});
+
+
+		});	
+
+function close_box3()
+			{
+				$('.backdrop3, .box3').animate({'opacity':'0'}, 300, 'linear', function(){
+					$('.backdrop3, .box3').css('display', 'none');
+				});
+			}
+
+
+	</script>
 	</head>
 
 	<body>
 		<!-- BEGIN Main Header -->
-		<div id="header-bar">
+		 <div class="navbar">
+   		<div class="navbar-inner">
+   		 <div class="container">
+					<a class="brand" href="#">ScoutBuzz</a>
+					<ul style="margin-left: 165px; margin-top: 10px;" class="nav pull-right">
+						<li>
+							
+						</li>
 
-		</div>
+					</ul>
+  		 </div>
+    	</div>
+    </div>
 		<!-- END Main Header -->
-		
-<div id="create_profile"><%= link_to "Create Your Profile", user_criteria_path %></div>
+
+
+
+<%= link_to 'Create Profile', 'user_criteria' %>
+
 <!--<%= button_to "Create Your Profile", {:controller => 'users', :action => 'user_criteria'}, {:class => 'profile'} %>-->
 	
 		<!-- Begin Render Micropost Form -->
@@ -66,9 +110,17 @@ return false;
 													<div class="profile_pic"><%= image_tag	"http://api.twitter.com/1/users/profile_image/#{micropost.user.uid}.format",  :size => "60x60" %></div>
 													<% end %>	
 
-													<% if micropost.user.provider != 'twitter' && micropost.user.provider != 'facebook' %>
-														<span class="profile_pic"><%= image_tag micropost.user.gravatar_url, :size => "60x60" %></span>
+												  <% if micropost.user.provider == 'linkedin' %>
+													<span class="profile_pic"><%= image_tag "http://graph.facebook.com/#{micropost.user.uid}/picture", :size => "60x60" %></span>
 													<% end %>
+
+	
+<span class="profile_pic"><%= image_tag avatar_url(micropost.user), :size => "60x60" %></span>
+
+											
+													
+
+													
 	
 					<div id="headings"><h5 class="name"><%= micropost.user.name %></h5>
 								

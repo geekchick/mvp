@@ -1,6 +1,21 @@
-<html>
-<body>
-<!--Begin Create Registration -->
+<!DOCTYPE HTML>
+
+<html class="no-js" lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<title>CompanyName - Worldwide Scout </title>
+</head>
+
+	<body>
+		<!-- BEGIN Main Header -->
+		<div id="header-bar">
+
+		</div>
+		<!-- END Main Header -->
+
+		<div id="preview4" >
+			
+			<!--Begin Create Registration -->
 <%= form_tag "/auth/identity/register" do %>
   <% if @identity && @identity.errors.any? %>
     <div class="error_messages">
@@ -12,25 +27,33 @@
       </ul>
     </div>
   <% end %>
-  <div class="field">
-    <%= label_tag :name %><br>
-    <%= text_field_tag :name, @identity.try(:name) %>
-  </div>
-  <div class="field">
-    <%= label_tag :email %><br>
-    <%= text_field_tag :email, @identity.try(:email) %>
-  </div>
-  <div class="field">
-    <%= label_tag :password %><br>
-    <%= password_field_tag :password %>
-  </div>
-  <div class="field">
-    <%= label_tag :password_confirmation %><br>
-    <%= password_field_tag :password_confirmation %>
-  </div>
-  <div class="actions"><%= submit_tag "Register" %></div>
+
+		<ul style="margin-left: 210px; margin-top: 50px; padding-top: 40px;">
+			<li>
+    		<h4>Full Name</h4>
+    		<%= text_field_tag :name, @identity.try(:name) %>
+ 			</li>
+			<li>
+ 				<h4>Email</h4>
+		    <%= text_field_tag :email, @identity.try(:email) %>
+			</li>
+			<li>
+				<h4>Password</h4>
+			  <%= password_field_tag :password %>
+			</li>
+			<li>
+				<h4>Confirm Password</h4>
+				<%= password_field_tag :password_confirmation %>
+			</li><br />
+  		<li style="margin-left: 60px;">
+				<%= submit_tag "Sign Up", :class =>  'btn btn_profile'%>
+			</li>
 <% end %>
 <!-- End Create Registration -->
-</body>
+			</ul>
+		</div>
+			
+	</body>
+
 </html>
 

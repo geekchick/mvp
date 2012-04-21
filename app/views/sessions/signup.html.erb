@@ -3,7 +3,9 @@
 <html class="no-js" lang="en">
 	<head>
 		<meta charset="utf-8"/>
-		<title>CompanyName - Worldwide Scout </title>
+		<title>ScoutBuzz </title>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" ></script>
+			
 
 <!--Facebooker Login button on signup page -->
 <div id="fb-root"></div>
@@ -30,16 +32,88 @@
    }(document));
 </script>
 
+	<script type="text/javascript">
+		
+		$(document).ready(function() {
+	
+			$('.lightbox').click(function() {
+				$('.backdrop, .box' ).animate({'opacity':'.50'}, 300, 'linear');
+			  $('.box' ).animate({'opacity':'1.00'}, 300, 'linear');
+				$('.backdrop, .box').css('display', 'block');
+			});	
 
-	</head>
+			$('.close').click(function(){
+					close_box();
+				});
+ 
+				$('.backdrop').click(function(){
+					close_box();
+				});
+
+
+		});	
+
+		function close_box()
+			{
+				$('.backdrop, .box').animate({'opacity':'0'}, 300, 'linear', function(){
+					$('.backdrop, .box').css('display', 'none');
+				});
+			}
+
+
+	</script>
+
+<script type="text/javascript">
+		
+		$(document).ready(function() {
+	
+			$('.lightbox2').click(function() {
+				$('.backdrop2, .box2' ).animate({'opacity':'.50'}, 300, 'linear');
+			  $('.box2' ).animate({'opacity':'1.00'}, 300, 'linear');
+				$('.backdrop2, .box2').css('display', 'block');
+			});	
+
+			$('.close').click(function(){
+					close_box2();
+				});
+ 
+				$('.backdrop2').click(function(){
+					close_box2();
+				});
+
+
+		});	
+
+function close_box2()
+			{
+				$('.backdrop2, .box2').animate({'opacity':'0'}, 300, 'linear', function(){
+					$('.backdrop2, .box2').css('display', 'none');
+				});
+			}
+
+
+	</script>
+
+
+</head>
 
 	<body>
 		<!-- BEGIN Main Header -->
-		<div id="header-bar">
+		 <div class="navbar">
+   		<div class="navbar-inner">
+   		 <div class="container">
+					<a class="brand" href="#">ScoutBuzz</a>
+					<ul style="margin-left: 165px; margin-top: 10px;" class="nav pull-right">
+						<li>
+							<a href="#" class="lightbox2" style="color: #ffffff;">Log in</a>
+						</li>
 
-		</div>
+					</ul>
+  		 </div>
+    	</div>
+    </div>
 		<!-- END Main Header -->
-				<div id="preview">
+				<div id="preview2">
 				
 				  	<!-- Begin Facebook Login -->
 <a href="/auth/facebook" class="auth_provider">
@@ -53,25 +127,68 @@
 </a>
 <!-- End Twitter Login -->
 
-<p>
+<!-- Begin Linkedin Login -->
+<a href="/auth/linkedin" class="auth_provider">
+	<%= image_tag "linkedin_64.png", :alt => "Linkedin"  %>
+</a>
+<!-- End Twitter Login -->
+
   or
-  <%= link_to "sign up", new_identity_path %> 
-	with your email address.
-</p>
+	<a href="#" class="lightbox">Sign up</a> with your email address.
 
-<p>
-<%= form_tag "/auth/identity/callback" do %>
-  <div class="field">
-    <%= label_tag :auth_key, "Email" %><br>
-    <%= text_field_tag :auth_key %>
-  </div>
-  <div class="field">
-    <%= label_tag :password %><br>
-    <%= password_field_tag :password %>
-  </div>
-  <div class="actions"><%= submit_tag "Login" %></div>
+		<div class="backdrop"></div>
+		<div class="box"><div class="close">x</div>
+				<!--Begin Create Registration -->
+<%= form_tag "/auth/identity/register" do %>
+  <% if @identity && @identity.errors.any? %>
+    <div class="error_messages">
+      <h2><%= pluralize(@identity.errors.count, "error") %> prohibited this account from being saved:</h2>
+      <ul>
+      <% @identity.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+		<ul style="margin-left: 145px; margin-top: 10px;">
+			<li>
+    		<h5>Full Name</h5>
+    		<%= text_field_tag :name, @identity.try(:name) %>
+ 			</li>
+			<li>
+ 				<h5>Email</h5>
+		    <%= text_field_tag :email, @identity.try(:email) %>
+			</li>
+			<li>
+				<h5>Password</h5>
+			  <%= password_field_tag :password %>
+			</li>
+			<li>
+				<h5>Confirm Password</h5>
+				<%= password_field_tag :password_confirmation %>
+			</li><br /><br />
+  		<li style="margin-left: 60px;">
+				<%= submit_tag "Sign Up", :class =>  'btn btn_profile'%>
+			</li>
 <% end %>
+<!-- End Create Registration -->
+			</ul>
 
+		</div>
+
+
+<div class="box2"><div class="close">x</div>
+<%= form_tag "/auth/identity/callback" do %>
+ 	<ul style="margin-left: 90px; margin-top: 10px;">
+    <h5>Email</h5>
+    <li><%= text_field_tag :auth_key %></li>
+		<h5>Password</h5>
+    <li><%= password_field_tag :password %></li><br/>
+		<li style="margin-left: 60px;"><%= submit_tag "Login", :class =>  'btn btn_profile' %></li>
+	</ul>
+<% end %>
+	</div>
 				</div>
 
 		</body>

@@ -8,16 +8,26 @@
 
 	<body>
 		<!-- BEGIN Main Header -->
-		<div id="header-bar">
+		 <div class="navbar">
+   		<div class="navbar-inner">
+   		 <div class="container">
+					<a class="brand" href="#">ScoutBuzz</a>
+					<ul style="margin-left: 165px; margin-top: 10px;" class="nav pull-right">
+						<li>
+							
+						</li>
 
-		</div>
+					</ul>
+  		 </div>
+    	</div>
+    </div>
 		<!-- END Main Header -->
 
 		<div id="preview2" >
 		
 			 <h1>	  
         <%= @user.name %>
-      </h1>
+       </h1>
 
 
 <!-- Profile Picture -->
@@ -29,10 +39,9 @@
 			<%= image_tag	"http://api.twitter.com/1/users/profile_image/#{@user.uid}.format" %>
 	<% end %>				
 
-	<% if @user.provider != 'facebook' && @user.provider != 'twitter' %>
-			<%= image_tag @user.gravatar_url %>
-  <% end %>
-
+<% if @user.provider != 'twitter' && @user.provider != 'facebook' %>
+	<%=  image_tag avatar_url(@user) %>
+<% end %>
 
 
 		<div class="nippleBox">
@@ -44,7 +53,7 @@
         	<div class="content"><%= render 'microposts/micropost' %></div>
 
 				<% end %>
- 	<%= paginate @microposts %>
+ 
 		</div>
 
 <div class="view_edit">
@@ -60,7 +69,7 @@
 </div>
 	
 
-		</div>
+</div>
 	</body>
 
 </html>

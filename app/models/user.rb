@@ -1,6 +1,10 @@
 class User < ActiveRecord::Base
  include Gravtastic
 	attr_accessible :role, 
+									:current_team,
+									:current_level,
+								 :former_team,
+								 :former_level,
 									:sport, 
 									:birthdate, 
 									:ppg, 
@@ -17,7 +21,9 @@ class User < ActiveRecord::Base
 									:position,
 									:height,
 									:weight,
-									:video_url,
+									:video_url_1,
+									:video_url_2,
+									:video_url_3,
 									:video_title
 
   gravtastic :email

@@ -1,8 +1,7 @@
 class CommentsController < ApplicationController
 
 	def index
-		@comments = Comment.all
-		
+		@comments = Comment.all	
 	end
 
 	def new
@@ -13,7 +12,6 @@ class CommentsController < ApplicationController
 			@comment = Comment.new(params[:comment])
 		  @comment.user_id = current_user.id
 	    @comment.micropost_id = params[:micropost_id]
-
 
 		  if @comment.save
 				

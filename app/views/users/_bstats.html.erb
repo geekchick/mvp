@@ -1,0 +1,71 @@
+<div class="backdrop4"></div>
+		<div class="box4"><div class="close">x</div>
+	<%= form_for (@user) do |f| %>
+	<ul>
+		<li style="float:left; padding-right: 10px;">
+   		<h4 >Season</h4>
+			<%= f.select(:season, ["2011-2012", "2010-2011", "2009-2010"])  %>
+		</li>
+		<li style="float:left; padding-right: 10px;">
+   		<h4>Team</h4>
+			<%= f.select(:team, [""])  %>
+		</li>
+		<li style="float:left;  padding-right: 10px;">
+   		<h4>GP</h4>
+			<%= f.text_field :games_played, :class => 'box_stat'   %>
+		</li>
+		<li style="float:left;  padding-right: 10px;">
+   		<h4>MPG</h4>
+			<%= f.text_field :minutes_per_game, :class => 'box_stat'   %>
+		</li>
+		<li style="float:left;  padding-right: 10px;">
+   		<h4>FGM</h4>
+			<%= f.text_field :field_goal_made, :class => 'box_stat'   %>
+		</li>
+		<li style="float:left;  padding-right: 10px;">
+   		<h4>FGA</h4>
+			<%= f.text_field :field_goal_attempt, :class => 'box_stat'   %>
+		</li>
+		<li style="float:left;  padding-right: 10px;">
+   		<h4>3PM</h4>
+			<%= f.text_field :three_point_made, :class => 'box_stat'   %>
+		</li>
+		<li style="float:left;  padding-right: 10px;">
+   		<h4>3PA</h4>
+			<%= f.text_field :three_point_attempt, :class => 'box_stat'   %>
+		</li>
+		<li  style="float:left;  padding-right: 10px;">
+   		<h4>FTM</h4>
+			<%= f.text_field :free_throw_made, :class => 'box_stat'   %>
+		</li>
+		<li  style="float:left;   padding-right: 10px;">
+   		<h4>FTA</h4>
+			<%= f.text_field :free_throw_attempt, :class => 'box_stat'   %>
+		</li>
+		<li style="float:left;  padding-right: 10px;">
+	    <h4>RPG</h4>
+			<%= f.text_field :rpg, :class => 'box_stat' %>
+		</li>
+		<li style="float:left;  padding-right: 10px;">
+    	<h4>APG</h4>
+			<%= f.text_field :apg, :class => 'box_stat'  %>
+		</li>
+		<li style="float:left;  padding-right: 10px;">
+    	<h4>SPG</h4>
+			<%= f.text_field :spg, :class => 'box_stat'  %>
+		</li>
+		<li style="float:left;  padding-right: 10px;">
+    	<h4>BPG</h4>
+			<%= f.text_field :bpg, :class => 'box_stat'  %>
+		</li>
+		<li style="float:left;  padding-right: 10px;">
+   		<h4>PPG</h4>
+			<%= f.text_field :ppg, :class => 'box_stat' %>
+		</li>
+		<li style="margin-left: 10px;">
+			<%= f.submit "Update", :class => 'btn btn_profile' %>
+		</li>
+
+	</ul>
+	<% end %>
+</div>

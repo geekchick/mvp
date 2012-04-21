@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -59,19 +60,35 @@ ActiveRecord::Schema.define(:version => 20120314014147) do
     t.string   "bio"
     t.date     "birthdate"
     t.string   "role"
+    t.string   "current_team"
+    t.string   "current_level"
+    t.string   "former_team"
+    t.string   "former_level"
     t.string   "sport"
     t.string   "ppg"
     t.string   "rpg"
     t.string   "apg"
     t.string   "spg"
+    t.string   "bpg"
+    t.string   "season"
+    t.string   "team"
+    t.string   "games_played"
+    t.string   "minutes_per_game"
+    t.string   "field_goal_made"
+    t.string   "field_goal_attempt"
+    t.string   "three_point_made"
+    t.string   "three_point_attempt"
+    t.string   "free_throw_made"
+    t.string   "free_throw_attempt"
     t.string   "height"
     t.integer  "weight"
     t.string   "position"
     t.string   "video_title"
-    t.string   "video_url"
+    t.string   "video_url_1"
+    t.string   "video_url_2"
+    t.string   "video_url_3"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "avatar_url"
   end
 
 end
