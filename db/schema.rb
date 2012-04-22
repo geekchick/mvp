@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(:version => 20120314014147) do
   add_index "comments", ["micropost_id", "created_at"], :name => "index_comments_on_micropost_id_and_created_at"
   add_index "comments", ["user_id", "created_at"], :name => "index_comments_on_user_id_and_created_at"
 
-  create_table "identities", :primary_key => "identity_id", :force => true do |t|
+  create_table "identities", :force => true do |t|
     t.string   "name"
     t.string   "email"
     t.string   "password_digest"

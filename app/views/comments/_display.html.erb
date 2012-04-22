@@ -2,11 +2,9 @@
 
 <% micropost.comments.each do |comment| %>
 
-			
 		 <p><%= comment.user.name %><%= comment.content %></p>
 		
 			<h6 class="timestamp2"><%= time_ago_in_words(comment.created_at) %> 			ago</h6>
 
 
- <br /><br />
 <% end %>
