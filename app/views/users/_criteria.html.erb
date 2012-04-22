@@ -15,20 +15,16 @@
 <div class="criteria">
 	<ul>
 		<li>
-				<h4>Who are you? <h4>
+				<h3 style="float: left;">Who are you?<h3><b style="font-size: 10px;"><i>(Athlete, Team, Agent)</i></b><br />
+				<%= f.select(:role, ["Athlete", "Sports Team", "Sports Agent"] , :prompt => true) %>
 		</li>
-		<li>
-				<%= f.select(:role, ["Player", "Team", "Agent"]) %>
-		</li>		
-		<li>
-			<h4>What is your sport?</h4>
-		</li>
-		<li>
-	    <%= f.select(:sport, ["Basketball", "Baseball", "Football"]) %>
+		<li >
+			<h4 >What is your sport?</h4>
+	  	<%= f.select(:sport, ["Baseball", "Basketball"] , :prompt => true ) %>
 		</li>
 
 	</ul>
 </div>
 
-    <div class="button_criteria"><%= f.submit :class => "btn btn_profile" %></div>
+<%= f.submit "Click to your Profile!", :class => "btn btn_profile" %>
 <% end %>
