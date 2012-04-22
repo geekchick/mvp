@@ -88,7 +88,7 @@ function close_box3()
 
 
 
-<!--<%= link_to 'Create Profile', 'user_criteria' %>-->
+<%= link_to 'Create Profile', 'user_criteria' %>
 
 <!--<%= button_to "Create Your Profile", {:controller => 'users', :action => 'user_criteria'}, {:class => 'profile'} %>-->
 	
@@ -99,7 +99,7 @@ function close_box3()
 <%= render 'form' %>
 		<div id="preview" >
 
-<% unless @microposts.empty? %>
+<!--<% unless @microposts.empty? %>-->
 	<% @microposts.each do |micropost| %>
 
 													 <% if micropost.user.provider == 'facebook' %>
