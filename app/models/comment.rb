@@ -10,7 +10,7 @@ class Comment < ActiveRecord::Base
 	#Comment.select('ORDER BY(created_at DESC)')
 	#SELECT comments from COMMENT ORDER BY created_at DESC;
 
- Comment.count(:order => 'DATE(created_at) DESC', :group => ["DATE(created_at)"])
- Comment.count(:order => 'DATE(created_at) DESC', :group => ["DATE(created_at)"]).each {|u| puts "#{u[0]} -> #{u[1]}" }
+ #Comment.count(:order => 'DATE(created_at) DESC', :group => ["DATE(created_at)"])
+ #Comment.count(:order => 'DATE(created_at) DESC', :group => ["DATE(created_at)"]).each {|u| puts "#{u[0]} -> #{u[1]}" }
 
 end
