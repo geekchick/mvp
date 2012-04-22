@@ -5,3 +5,14 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
+
+#users = User.create ([ {:name => 'Jane Doe'}]) 
+#Micropost.create(:content => "This is a test!!", :user => users.first)
+
+
+
+#User.create( :name => "Jane Smith2")
+Micropost.delete_all
+Micropost.create(:content => "Example post")
+
+
