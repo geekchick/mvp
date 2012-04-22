@@ -51,8 +51,6 @@ group :production, do
 	gem 'pg', '~> 0.12.2'
 end
 
-gem 'taps'
-
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem "omniauth-linkedin", "~> 0.0.6"
@@ -97,7 +95,6 @@ end
 # Bundle the extra gems:
 # gem 'bj'
 # gem 'nokogiri'
-# gem 'sqlite3-ruby', :require => 'sqlite3'
 # gem 'aws-s3', :require => 'aws/s3'
 
 # Bundle gems for the local environment. Make sure to
