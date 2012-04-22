@@ -98,9 +98,8 @@ function close_box3()
 
 <%= render 'form' %>
 		<div id="preview" >
-				<div id="" >
 
-<% if @microposts != '' %>
+<% unless @microposts.empty? %>
 	<% @microposts.each do |micropost| %>
 
 													 <% if micropost.user.provider == 'facebook' %>
@@ -115,7 +114,6 @@ function close_box3()
 <h6 class="timestamp">Posted <%= time_ago_in_words(micropost.created_at) %> ago.</h6></p>-->
 
           
-</div>
 
 				
 			 <!--<a href="#" class="view_comments" >View all &nbsp;<%= micropost.comments.count %> comments </a><br />-->
@@ -129,7 +127,7 @@ function close_box3()
 			<% end %>
 	<% end %>
 		</div>
-		</div>
+
 
 
 	</body>
