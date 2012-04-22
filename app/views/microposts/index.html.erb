@@ -102,13 +102,13 @@ function close_box3()
 
 	<% @microposts.each do |micropost| %>
 
-													 <% if micropost.user.provider == 'facebook' %>
+													 <!--<% if micropost.user.provider == 'facebook' %>
 														 <span class="profile_pic"><%= image_tag "http://graph.facebook.com/#{micropost.user.uid}/picture" %></span>
-														<% end %>
+														<% end %>-->
 
 													
 	
-					<!--<div id="headings"><h5 class="name"><%= micropost.user.name %></h5>
+					<div id="headings"><h5 class="name"><%= micropost.user.name %></h5>
 								
 					<p class="content"><%= micropost.content %>
 <h6 class="timestamp">Posted <%= time_ago_in_words(micropost.created_at) %> ago.</h6></p>-->
