@@ -3,7 +3,40 @@
 <html class="no-js" lang="en">
 	<head>
 		<meta charset="utf-8"/>
-		<title>CompanyName - Worldwide Scout </title>
+		<title>ScoutBuzz </title>
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" ></script>
+
+<script type="text/javascript">
+		
+		$(document).ready(function() {
+	
+			$('.lightbox5').click(function() {
+				$('.backdrop5, .box5' ).animate({'opacity':'.50'}, 300, 'linear');
+			  $('.box5' ).animate({'opacity':'1.00'}, 300, 'linear');
+				$('.backdrop5, .box5').css('display', 'block');
+			});	
+
+			$('.close').click(function(){
+					close_box5();
+				});
+ 
+				$('.backdrop5').click(function(){
+					close_box5();
+				});
+
+
+		});	
+
+function close_box5()
+			{
+				$('.backdrop5, .box5').animate({'opacity':'0'}, 300, 'linear', function(){
+					$('.backdrop5, .box5').css('display', 'none');
+				});
+			}
+
+
+	</script>
 	</head>
 
 	<body>
@@ -56,10 +89,134 @@
  
 		</div>
 
+
 <div class="view_edit">
 	<% if @user.sport == 'Basketball' && @user.role == 'Athlete' %>
 		<%= link_to "Edit My Profile", basketball_personal_path %> |
-		<%= link_to "View My Profile", profile_path %>
+	<a href="#" class="lightbox5">View My Profile</a>
+
+		<div class="backdrop5"></div>
+		<div class="box5"><div class="close">x</div>
+		<ul>
+			<li>
+				<h1><%= @user.name %></h1>
+			</li>
+			<li style="float:left;">
+				<% if @user.provider == 'facebook' %> 
+					<%= image_tag "http://graph.facebook.com/#{@user.uid}/picture", :size => '230x270'  %>		
+				<% end %>
+		</li>
+	</ul>
+
+	<ul id="profile_intro">
+		<li style="font-size: 18px;"><%= @user.position %> | <%= @user.height %>, <%= @user.weight %> | <%= @user.country %></li><hr style="width: 350px;" />
+		<li><strong style="padding-right: 65px;">Sport</strong><%= @user.sport %>,<%= @user.gender %></li>
+		<li><strong style="padding-right: 65px;">Born</strong> <%= @user.birthdate %></li>
+		<li><strong style="padding-right: 12px;">Current Team</strong><%= @user.current_team %>, <%= @user.current_level %></li>
+		<li><strong style="padding-right: 15px;">Former Team</strong><%= @user.former_team %>, <%= @user.former_level %></li>
+	</ul> 
+
+<h3 class="vid">Recent Videos</h3>
+	<ul id="profile_videos" >
+		<li style="float: left; padding-left: 20px; padding-right: 10px;">
+			<% if @user.video_url_1.blank? %>
+	
+			<% else %>
+				<% aha = UnvlogIt.new(@user.video_url_1) %>
+			  <%= aha.embed_html(215, 190).html_safe  %>
+			<% end %>
+		</li>
+
+		<li style="float: left; padding-right: 10px;">
+			<% if @user.video_url_2.blank? %>
+	
+			<% else %>
+				<% aha = UnvlogIt.new(@user.video_url_2) %>
+			  <%= aha.embed_html(215, 190).html_safe  %>
+			<% end %>
+		</li>
+
+			<li style="float: left;">
+			<% if @user.video_url_3.blank? %>
+	
+			<% else %>
+				<% aha = UnvlogIt.new(@user.video_url_3) %>
+			  <%= aha.embed_html(215, 190).html_safe  %>
+			<% end %>
+		</li>
+
+	</ul>
+
+		<ul id="profile_player" style="width: 720px;">
+				<li style="background-color: #424242; color:#ffffff; text-align: center; height: 30px;">Stats</li>
+				<li style="float:left; padding-left: 10px; padding-right: 23px; background-color: #D8D8D8; height: 30px;">
+					<h6 style="color: #2E2E2E;">GP</h6>				
+					<%= @user.games_played %>
+				</li>		
+				<li style="float:left; padding-right: 15px; background-color: #D8D8D8; height: 30px;">
+					<h6 style="color: #2E2E2E;">MPG</h6>
+					<%= @user.minutes_per_game %>
+				</li>		
+				<li style="float:left; padding-right: 15px; background-color: #D8D8D8; height: 30px;">
+					<h6 style="color: #2E2E2E;">FGM</h6>
+					<%= @user.field_goal_made %>
+				</li>		
+				<li style="float:left; padding-right: 15px; background-color: #D8D8D8; height: 30px;">
+					<h6 style="color: #2E2E2E;">FGA</h6>
+					<%= @user.field_goal_attempt %>
+				</li>
+				<li style="float:left; padding-right: 15px; background-color: #D8D8D8; height: 30px;"> 
+					<h6 style="color: #2E2E2E;">FG%</h6>
+					<% @fgm =  @user.field_goal_made %>
+					<% @fga = @user.field_goal_attempt %>		
+					<!--<%= number_to_percentage(@fgm.to_f / @fga.to_f) %>-->
+				</li>
+				<li style="float:left; padding-right: 15px; background-color: #D8D8D8; height: 30px;">
+					<h6 style="color: #2E2E2E;">3PM</h6>
+					<%= @user.three_point_made %>
+				</li>
+				<li style="float:left; padding-right: 15px; background-color: #D8D8D8; height: 30px;">
+					<h6 style="color: #2E2E2E;">3PA</h6>
+					<%= @user.three_point_attempt %>
+				</li>
+				<li style="float:left; padding-right: 15px; background-color: #D8D8D8; height: 30px;">
+					<h6 style="color: #2E2E2E;">3P%</h6>
+					
+				</li>
+				<li style="float:left; padding-right: 15px; background-color: #D8D8D8; height: 30px;">
+					<h6 style="color: #2E2E2E;">FTM</h6>
+					<%= @user.free_throw_made %>
+				</li>
+				<li style="float:left; padding-right: 15px; background-color: #D8D8D8; height: 30px;">
+					<h6 style="color: #2E2E2E;">FTA</h6>
+					<%= @user.free_throw_attempt %>
+				</li>	
+				<li style="float:left; padding-right: 15px; background-color: #D8D8D8; height: 30px;">
+					<h6 style="color: #2E2E2E;">FT%</h6>
+					
+				</li>
+				<li style="float:left; padding-right: 15px; background-color: #D8D8D8; height: 30px;">
+					<h6 style="color: #2E2E2E;">RPG</h6>
+					<%= @user.rpg %>
+				</li>
+				<li style="float:left; padding-right: 15px; background-color: #D8D8D8; height: 30px;">
+					<h6 style="color: #2E2E2E;">APG</h6>
+					<%= @user.apg %>
+				</li>
+				<li style="float:left; padding-right: 15px; background-color: #D8D8D8; height: 30px;">
+					<h6 style="color: #2E2E2E;">BLKPG</h6>
+					<%= @user.bpg %>
+				</li>
+				<li style="float:left; padding-right: 15px; background-color: #D8D8D8; height: 30px;">
+					<h6 style="color: #2E2E2E;">SPG</h6>
+					<%= @user.spg %>
+				</li>
+				<li style="float:left; padding-right: 10px; background-color: #D8D8D8; height: 30px;">
+					<h6 style="color: #2E2E2E;">PPG</h6>
+					<%= @user.ppg %>
+				</li>
+		</ul>
+		</div>
 	<% end %>
 	
 <% if @user.sport == 'Baseball' && @user.role == 'Player' %>
@@ -68,7 +225,6 @@
 
 </div>
 	
-
 </div>
 	</body>
 
