@@ -64,18 +64,8 @@ function close_box5()
 
 
 <!-- Profile Picture -->
-	<% if @user.provider == 'facebook' %> 
-			<%= image_tag "http://graph.facebook.com/#{@user.uid}/picture", :class => 'resize' %>		
-	<% end %>
 
-	<% if @user.provider == 'twitter' %>
-			<%= image_tag	"http://api.twitter.com/1/users/profile_image/#{@user.uid}.format" %>
-	<% end %>				
-
-<% if @user.provider != 'twitter' && @user.provider != 'facebook' %>
-	<%=  image_tag avatar_url(@user) %>
-<% end %>
-
+<%= image_tag avatar_url(micropost.user) %>
 
 		<div class="nippleBox">
 			<div class="bar">

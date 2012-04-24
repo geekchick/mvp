@@ -100,10 +100,7 @@ function close_box3()
 		<div id="preview" >
 
 	<% @microposts.each do |micropost| %>
-
-													 <% if micropost.user.provider == 'facebook' %>
-														 <span class="profile_pic"><%= image_tag "http://graph.facebook.com/#{micropost.user.uid}/picture" %></span>
-														<% end %>
+		<%= image_tag avatar_url(micropost.user) %>
 
 					<div id="headings"><h5 class="name"><%= micropost.user.name %></h5>
 								
@@ -123,8 +120,6 @@ function close_box3()
 			
 	<% end %>
 		</div>
-
-
 
 	</body>
 
