@@ -69,7 +69,7 @@ function close_box3()
 	</script>
 	</head>
 
-	<body>
+	<body style="background-color: #ffffff;">
 		<!-- BEGIN Main Header -->
 		 <div class="navbar">
    		<div class="navbar-inner">
@@ -88,29 +88,35 @@ function close_box3()
 
 
 
-<%= link_to 'Create Profile', 'user_criteria' %>
+<%= link_to 'Create Your Profile', 'user_criteria', :class => 'action_link' %>
 
-<!--<%= button_to "Create Your Profile", {:controller => 'users', :action => 'user_criteria'}, {:class => 'profile'} %>-->
+<!--<%= button_to "Create Your Profile", {:controller => 'users', :action => 'user_criteria'}, {:class => 'btn btn_action_call'} %>-->
 	
 		<!-- Begin Render Micropost Form -->
 			<!--<div id="form"><%= render 'form' %></div>-->
 		<!-- End Render Micropost Form -->
 
-<%= render 'form' %>
-		<div id="preview" >
+	<%= render 'form' %>
 
-	<% @microposts.each do |micropost| %>
-		<%= image_tag avatar_url(micropost.user) %>
+		<div id="micro">
+		<h3>Sports Feed</h3>
+		<% @microposts.each do |micropost| %>
+		
+				<hr style="width:55em;border:.1em solid #f5f5f5;" />
 
-					<div id="headings"><h5 class="name"><%= micropost.user.name %></h5>
-								
-					<p class="content"><%= micropost.content %>
-<h6 class="timestamp">Posted <%= time_ago_in_words(micropost.created_at) %> ago.</h6></p>
-
-          
-<hr style="width:45em;border:.1em solid #f5f5f5; margin-left: 10px;" />
-			
+				<ul>
+					<li style="float: left; padding-right: 10px; text-align: top;">
+						<span><%= image_tag avatar_url(micropost.user), :size=>'75x75'%></span>
+					</li>
+					<li style="padding-bottom: 50px;">
+							<h5 class="name"><%= micropost.user.name %></h5>
+							<p class="content"><%= micropost.content %></p>
+							<p><h6 class="timestamp">Posted <%= time_ago_in_words(micropost.created_at) %> ago.</h6></p>
+					</li>
+				</ul>		
+         		
 	<% end %>
+		<hr style="width:55em;border:.1em solid #f5f5f5;" />
 		</div>
 
 	</body>
