@@ -44,7 +44,7 @@ function close_box5()
 		 <div class="navbar">
    		<div class="navbar-inner">
    		 <div class="container">
-					<a class="brand" href="#">Get Scouted! Spread the buzz.</a>
+					<a class="brand" href="#"><%= image_tag 'logo.png'%></a>
 					<ul style="margin-left: 165px; margin-top: 10px;" class="nav pull-right">
 						<li>
 							
@@ -76,7 +76,11 @@ function close_box5()
         	<div class="content"><%= render 'microposts/micropost' %></div>
 
 				<% end %>
- 
+
+
+				<!--<div style="margin-left: 220px; margin-top: 200px;"><%= paginate @microposts  %></div>-->
+
+   
 		</div>
 
 <div class="view_edit">
