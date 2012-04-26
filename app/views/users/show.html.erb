@@ -44,7 +44,7 @@ function close_box5()
 		 <div class="navbar">
    		<div class="navbar-inner">
    		 <div class="container">
-					<a class="brand" href="#">ScoutBuzz</a>
+					<a class="brand" href="#">Get Scouted! Spread the buzz.</a>
 					<ul style="margin-left: 165px; margin-top: 10px;" class="nav pull-right">
 						<li>
 							
@@ -67,7 +67,6 @@ function close_box5()
 
 <%= image_tag avatar_url(@user), :size => '125x150' %>
 
-
 		<div class="nippleBox">
 			<div class="bar">
 					<h4>Microposts (<%= @user.microposts.count %>)</h4>
@@ -80,9 +79,8 @@ function close_box5()
  
 		</div>
 
-
 <div class="view_edit">
-	<% if @user.sport == 'Basketball' && @user.role == 'Athlete' %>
+	<% if @user.sport == 'Basketball' && @user.role == 'Player' %>
 		<%= link_to "Edit My Profile", basketball_personal_path %> |
 	<a href="#" class="lightbox5">View My Profile</a>
 

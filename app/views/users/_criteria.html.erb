@@ -12,19 +12,23 @@
   <% end %>
 
 
-<div class="criteria">
-	<ul>
+		<div id="criteria_box" >
+		<div id="criteria_top"></div>
+		<h2 style="margin-top: -60px; margin-left: 120px; color: #fffffe;">Get Started on scoutbuzz.com!</h2>
+	<ul style="margin-left: 120px; margin-top: 40px;">
 		<li>
-				<h3 style="float: left;">Who are you?<h3><b style="font-size: 10px;"><i>(Athlete, Team, Agent)</i></b><br />
-				<%= f.select(:role, ["Athlete", "Sports Team", "Sports Agent"] , :prompt => true) %>
+				<h3 style="float: left; padding-right: 45px; ">Who are you?<h3><b style="font-size: 10px;"></b>
+				<%= f.select(:role, ["Player", "Sports Team", "Sports Agent"] , :prompt => true) %>
 		</li>
-		<li >
-			<h4 >What is your sport?</h4>
-	  	<%= f.select(:sport, ["Baseball", "Basketball"] , :prompt => true ) %>
+		<li>
+			<h3 style="float: left; padding-right: 10px;">Select your sport:</h3>
+	  	<%= f.select(:sport, ["American Football","Baseball", "Basketball", "Billiards(Pool)", "Bowling", "Boxing", "Cheerleading", "Cricket", "Cycling", "Dance" "Disc", "Diving", "Equestrian", "Fencing", "Field Hockey", "Football(Soccer)", "Golf", "Gymnastics", "Handball", "Horse Racing", "Ice Hockey", "Martial Arts ", "Motorsports", "Polo", "Racquetball", "Rollerderby", "Rowing", "Rugby", "Sailing", "Shooting", "Skateboarding", "Skiing", "Sledding", "Softball", "Snowboarding", "Surfing", "Swimming", "Table Tennis", "Tennis", "Track and Field", "Volleyball", "Weightlifting", "Wrestling", "Other" ] , :prompt => true ) %>
+		</li><br/><br /><br />
+		<li style="margin-left: 110px;">
+		<%= f.submit "Get Scouted!", :class => "btn btn_profile_criteria" %>
 		</li>
 
 	</ul>
-</div>
 
-<%= f.submit "Click to your Profile!", :class => "btn btn_profile" %>
+</div>
 <% end %>
