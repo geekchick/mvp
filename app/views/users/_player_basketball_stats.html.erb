@@ -9,7 +9,7 @@
 		</li>
 		<li>
 			<h4>Level <h4>
-		  <%= f.select(:current_level, ["Semi Pro", "Pro", "Collegiate"]) %>
+		  <%= f.select(:current_level, ["Pro", "Semi Pro", "Collegiate", "High School"]) %>
 		</li>
 		<li style="float: left; padding-right: 10px;">
 			<h4>Former Team <h4>
@@ -17,7 +17,7 @@
 		</li>
 		<li>
 			<h4>Level <h4>
-		  <%= f.select(:former_level, ["Semi Pro", "Pro", "Collegiate"]) %>
+		  <%= f.select(:former_level, ["Pro", "Semi Pro", "Collegiate", "High School"]) %>
 		</li>
 		<li>
 			<h4>Position <h4>
@@ -25,7 +25,12 @@
 		</li>
 		<li style="float:left; padding-right: 10px;">	
     	<h4>Height</h4>
-			<%= f.select(:height, ["6'0", "6'1", "6'2"]) %>
+			<!--<%= f.select(:height, ["6'0", "6'1", "6'2"]) %>-->
+
+
+		<%= f.select :height, options_for_select(@heights), :prompt => true %>
+
+
   	</li>
 		<li>	  
 			 <h4>Weight</h4>

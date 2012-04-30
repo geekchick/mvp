@@ -8,7 +8,7 @@
 		</li>
 		<li style="float:left; padding-right: 10px;">
    		<h4>Team</h4>
-			<%= f.select(:team, [""])  %>
+			<%= f.select(:team, [@user.current_team, @user.former_team])  %>
 		</li>
 		<li style="float:left;  padding-right: 10px;">
    		<h4>GP</h4>
